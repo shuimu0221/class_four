@@ -1,0 +1,335 @@
+{"kind":"deck","id":"pr/m2z2fn","name":"Deck"}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"","type":"master","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"body","type":"body","textPreview":"Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level"},{"name":"dateTime","type":"dateTime","textPreview":"1/27/13"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"Title Slide","type":"title","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"subtitle","type":"subtitle","textPreview":"Click to edit Master subtitle style"},{"name":"dateTime","type":"dateTime","textPreview":"1/27/13"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout2.xml","name":"Title and Content","type":"obj","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"content placeholder 2","textPreview":"Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level"},{"name":"dateTime","type":"dateTime","textPreview":"1/27/13"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout3.xml","name":"Section Header","type":"secHead","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"body","type":"body","textPreview":"Click to edit Master text styles"},{"name":"dateTime","type":"dateTime","textPreview":"1/27/13"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout4.xml","name":"Two Content","type":"twoObj","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"content placeholder 2","textPreview":"Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level"},{"name":"content placeholder 3","textPreview":"Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level"},{"name":"dateTime","type":"dateTime","textPreview":"1/27/13"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout5.xml","name":"Comparison","type":"twoTxTwoObj","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"body","type":"body","textPreview":"Click to edit Master text styles"},{"name":"content placeholder 3","textPreview":"Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level"},{"name":"body","type":"body","textPreview":"Click to edit Master text styles"},{"name":"content placeholder 5","textPreview":"Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level"},{"name":"dateTime","type":"dateTime","textPreview":"1/27/13"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout6.xml","name":"Title Only","type":"titleOnly","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"dateTime","type":"dateTime","textPreview":"1/27/13"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout7.xml","name":"Blank","type":"blank","placeholders":[{"name":"dateTime","type":"dateTime","textPreview":"1/27/13"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout8.xml","name":"Content with Caption","type":"objTx","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"content placeholder 2","textPreview":"Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level"},{"name":"body","type":"body","textPreview":"Click to edit Master text styles"},{"name":"dateTime","type":"dateTime","textPreview":"1/27/13"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout9.xml","name":"Picture with Caption","type":"picTx","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"picture","type":"picture"},{"name":"body","type":"body","textPreview":"Click to edit Master text styles"},{"name":"dateTime","type":"dateTime","textPreview":"1/27/13"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout10.xml","name":"Title and Vertical Text","type":"vertTx","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"body","type":"body","textPreview":"Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level"},{"name":"dateTime","type":"dateTime","textPreview":"1/27/13"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout11.xml","name":"Vertical Title and Text","type":"vertTitleAndTx","placeholders":[{"name":"title","type":"title","textPreview":"Click to edit Master title style"},{"name":"body","type":"body","textPreview":"Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level"},{"name":"dateTime","type":"dateTime","textPreview":"1/27/13"},{"name":"footer","type":"footer"},{"name":"slideNumber","type":"slideNumber","textPreview":"‹#›"}]}
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"视觉组第四讲 · HELLO ARMOR","textShapes":4}
+{"kind":"shape","id":"sh/547294r6","slide":1,"name":"Rectangle 1","bbox":[0,0,17.28,720]}
+{"kind":"textbox","id":"sh/k3yl0zql","slide":1,"name":"TextBox 2","text":"视觉组第四讲 · HELLO ARMOR","textPreview":"视觉组第四讲 · HELLO ARMOR","textChars":20,"textLines":1,"bbox":[86.4,225.6,1008,48]}
+{"kind":"textbox","id":"sh/7qp4be9c","slide":1,"name":"TextBox 3","text":"装甲板位姿解算\n从 2D 识别结果到 3D 位姿：cv::solvePnP 全流程实战","textPreview":"装甲板位姿解算 | 从 2D 识别结果到 3D 位姿：cv::solvePnP 全流程实战","textChars":43,"textLines":2,"bbox":[81.6,264,1104,153.6]}
+{"kind":"textbox","id":"sh/65g3298r","slide":1,"name":"TextBox 4","text":"主讲人：______　　助教：______　　时长：90 分钟　　承接 Lecture 3《Hello OOP》","textPreview":"主讲人：______　　助教：______　　时长：90 分钟　　承接 Lecture 3《Hello OOP》","textChars":56,"textLines":1,"bbox":[86.4,604.8,960,57.6]}
+{"kind":"textbox","id":"sh/ts7md4r2","slide":1,"name":"Rounded Rectangle 5","text":"🖼  SP 队徽","textPreview":"🖼  SP 队徽","textChars":9,"textLines":1,"bbox":[1017.6,48,211.2,115.2]}
+{"kind":"notes","id":"nt/y90nupkv","slide":1,"text":""}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"课程地图 · Roadmap","textShapes":28}
+{"kind":"textbox","id":"sh/9072xkry","slide":2,"name":"TextBox 1","text":"课程地图 · Roadmap","textPreview":"课程地图 · Roadmap","textChars":14,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/ozy1ofad","slide":2,"name":"TextBox 2","text":"今天 90 分钟，我们要走完这条链路","textPreview":"今天 90 分钟，我们要走完这条链路","textChars":18,"textLines":1,"bbox":[52.8,69.12,1180.8,86.4]}
+{"kind":"shape","id":"sh/b29kza94","slide":2,"name":"Rounded Rectangle 3","bbox":[52.8,168,81.6,44.16]}
+{"kind":"textbox","id":"sh/a10jqpsj","slide":2,"name":"TextBox 4","text":"P0","textPreview":"P0","textChars":2,"textLines":1,"bbox":[52.8,168,81.6,44.16]}
+{"kind":"textbox","id":"sh/x4r21kru","slide":2,"name":"TextBox 5","text":"复习导入：上节课我们手里有了什么","textPreview":"复习导入：上节课我们手里有了什么","textChars":16,"textLines":1,"bbox":[153.6,168,921.6,44.16]}
+{"kind":"textbox","id":"sh/w3i1sfa9","slide":2,"name":"TextBox 6","text":"7 min","textPreview":"7 min","textChars":5,"textLines":1,"bbox":[1084.8,168,134.4,44.16]}
+{"kind":"shape","id":"sh/r65knqtk","slide":2,"name":"Rounded Rectangle 7","bbox":[52.8,227.52,81.6,44.16]}
+{"kind":"textbox","id":"sh/q5wjelsz","slide":2,"name":"TextBox 8","text":"P1","textPreview":"P1","textChars":2,"textLines":1,"bbox":[52.8,227.52,81.6,44.16]}
+{"kind":"textbox","id":"sh/ove9o7yd","slide":2,"name":"TextBox 9","text":"为什么装甲板需要“位姿”而不只是位置","textPreview":"为什么装甲板需要“位姿”而不只是位置","textChars":18,"textLines":1,"bbox":[153.6,227.52,921.6,44.16]}
+{"kind":"textbox","id":"sh/9wnqhczy","slide":2,"name":"TextBox 10","text":"7 min","textPreview":"7 min","textChars":5,"textLines":1,"bbox":[1084.8,227.52,134.4,44.16]}
+{"kind":"shape","id":"sh/mtwrmxg7","slide":2,"name":"Rounded Rectangle 11","bbox":[52.8,287.04,81.6,44.16]}
+{"kind":"textbox","id":"sh/nu58f2hs","slide":2,"name":"TextBox 12","text":"P2","textPreview":"P2","textChars":2,"textLines":1,"bbox":[52.8,287.04,81.6,44.16]}
+{"kind":"textbox","id":"sh/wjy9sry9","slide":2,"name":"TextBox 13","text":"PnP 原理与 cv::solvePnP 接口精讲","textPreview":"PnP 原理与 cv::solvePnP 接口精讲","textChars":25,"textLines":1,"bbox":[153.6,287.04,921.6,44.16]}
+{"kind":"textbox","id":"sh/xk7qlczu","slide":2,"name":"TextBox 14","text":"13 min","textPreview":"13 min","textChars":6,"textLines":1,"bbox":[1084.8,287.04,134.4,44.16]}
+{"kind":"shape","id":"sh/ahwrqhgj","slide":2,"name":"Rounded Rectangle 15","bbox":[52.8,346.56,81.6,44.16]}
+{"kind":"textbox","id":"sh/bip8jmho","slide":2,"name":"TextBox 16","text":"P3","textPreview":"P3","textChars":2,"textLines":1,"bbox":[52.8,346.56,81.6,44.16]}
+{"kind":"textbox","id":"sh/cnupgny5","slide":2,"name":"TextBox 17","text":"动手实验一：Task 01~03，建立 3D-2D 对应并解 PnP","textPreview":"动手实验一：Task 01~03，建立 3D-2D 对应并解 PnP","textChars":34,"textLines":1,"bbox":[153.6,346.56,921.6,44.16]}
+{"kind":"textbox","id":"sh/do3q9szq","slide":2,"name":"TextBox 18","text":"19 min","textPreview":"19 min","textChars":6,"textLines":1,"bbox":[1084.8,346.56,134.4,44.16]}
+{"kind":"shape","id":"sh/t8byxkn2","slide":2,"name":"Rounded Rectangle 19","bbox":[52.8,406.08,81.6,44.16]}
+{"kind":"textbox","id":"sh/s72xofmh","slide":2,"name":"TextBox 20","text":"P4","textPreview":"P4","textChars":2,"textLines":1,"bbox":[52.8,406.08,81.6,44.16]}
+{"kind":"textbox","id":"sh/76twva5c","slide":2,"name":"TextBox 21","text":"rvec 揭秘：旋转向量／矩阵／欧拉角／四元数","textPreview":"rvec 揭秘：旋转向量／矩阵／欧拉角／四元数","textChars":23,"textLines":1,"bbox":[153.6,406.08,921.6,44.16]}
+{"kind":"textbox","id":"sh/65kfmpor","slide":2,"name":"TextBox 22","text":"12 min","textPreview":"12 min","textChars":6,"textLines":1,"bbox":[1084.8,406.08,134.4,44.16]}
+{"kind":"shape","id":"sh/hcvy14ne","slide":2,"name":"Rounded Rectangle 23","bbox":[52.8,465.6,81.6,44.16]}
+{"kind":"textbox","id":"sh/gbmxszmt","slide":2,"name":"TextBox 24","text":"P5","textPreview":"P5","textChars":2,"textLines":1,"bbox":[52.8,465.6,81.6,44.16]}
+{"kind":"textbox","id":"sh/fadgzu58","slide":2,"name":"TextBox 25","text":"动手实验二：Task 04~05，验证结果并得到瞄准角","textPreview":"动手实验二：Task 04~05，验证结果并得到瞄准角","textChars":27,"textLines":1,"bbox":[153.6,465.6,921.6,44.16]}
+{"kind":"textbox","id":"sh/u94fqp4n","slide":2,"name":"TextBox 26","text":"17 min","textPreview":"17 min","textChars":6,"textLines":1,"bbox":[1084.8,465.6,134.4,44.16]}
+{"kind":"shape","id":"sh/p0vy54na","slide":2,"name":"Rounded Rectangle 27","bbox":[52.8,525.12,81.6,44.16]}
+{"kind":"textbox","id":"sh/4zmxwzmp","slide":2,"name":"TextBox 28","text":"P6","textPreview":"P6","textChars":2,"textLines":1,"bbox":[52.8,525.12,81.6,44.16]}
+{"kind":"textbox","id":"sh/mlgvq147","slide":2,"name":"TextBox 29","text":"坐标系全景：从像素到机器人本体 / IMU","textPreview":"坐标系全景：从像素到机器人本体 / IMU","textChars":21,"textLines":1,"bbox":[153.6,525.12,921.6,44.16]}
+{"kind":"textbox","id":"sh/nmpcj6ls","slide":2,"name":"TextBox 30","text":"6 min","textPreview":"6 min","textChars":5,"textLines":1,"bbox":[1084.8,525.12,134.4,44.16]}
+{"kind":"shape","id":"sh/onydsbmd","slide":2,"name":"Rounded Rectangle 31","bbox":[52.8,584.64,81.6,44.16]}
+{"kind":"textbox","id":"sh/9o7ulg3y","slide":2,"name":"TextBox 32","text":"P7","textPreview":"P7","textChars":2,"textLines":1,"bbox":[52.8,584.64,81.6,44.16]}
+{"kind":"textbox","id":"sh/a9gvulkj","slide":2,"name":"TextBox 33","text":"总结、答疑与作业布置","textPreview":"总结、答疑与作业布置","textChars":10,"textLines":1,"bbox":[153.6,584.64,921.6,44.16]}
+{"kind":"textbox","id":"sh/ba9cn6l4","slide":2,"name":"TextBox 34","text":"6 min","textPreview":"6 min","textChars":5,"textLines":1,"bbox":[1084.8,584.64,134.4,44.16]}
+{"kind":"textbox","id":"sh/wbidwb29","slide":2,"name":"TextBox 35","text":"Hello Armor · 装甲板位姿解算    P0 课程地图","textPreview":"Hello Armor · 装甲板位姿解算    P0 课程地图","textChars":32,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/xcrupg3u","slide":2,"name":"TextBox 36","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/hwbqtkby","slide":2,"text":""}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"P0","textShapes":4}
+{"kind":"shape","id":"sh/cza94vmx","slide":3,"name":"Rectangle 1","bbox":[0,0,17.28,720]}
+{"kind":"textbox","id":"sh/d0jax03i","slide":3,"name":"TextBox 2","text":"P0","textPreview":"P0","textChars":2,"textLines":1,"bbox":[86.4,259.2,288,134.4]}
+{"kind":"textbox","id":"sh/298ryl4v","slide":3,"name":"TextBox 3","text":"复习导入\n上节课我们手里有了什么？","textPreview":"复习导入 | 上节课我们手里有了什么？","textChars":17,"textLines":2,"bbox":[345.6,283.2,864,134.4]}
+{"kind":"textbox","id":"sh/3ah8rqlg","slide":3,"name":"TextBox 4","text":"Hello Armor · 装甲板位姿解算    P0 复习导入","textPreview":"Hello Armor · 装甲板位姿解算    P0 复习导入","textChars":32,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/obq90bml","slide":3,"name":"TextBox 5","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/ofy9wn61","slide":3,"text":""}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"P0 · 复习导入","textShapes":5}
+{"kind":"textbox","id":"sh/1cj2d8b6","slide":4,"name":"TextBox 1","text":"P0 · 复习导入","textPreview":"P0 · 复习导入","textChars":9,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/0ba143al","slide":4,"name":"TextBox 2","text":"上节课回顾（Hello OOP）","textPreview":"上节课回顾（Hello OOP）","textChars":16,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/rm1k7yt4","slide":4,"name":"TextBox 3","text":"· C/C++ 编译与 CMake：会写 CMakeLists.txt，能编译、运行自己的工程\n· 面向对象：类 = 属性 + 方法；构造/析构函数；封装——数据安全、隐藏实现、便于协作、防止耦合\n· 已经写好的两个类：\n      ‑ Camera 类：封装取图细节，对外只给一帧图像 + 时间戳\n      ‑ 识别器 / Detector 类：目标是识别装甲板并分类（位置、颜色、数字）\n      ‑ 两种识别思路：传统灯条法 / YOLO-pose 端到端\n· 作业：连接工业相机，封装相机类，用神经网络识别装甲板","textPreview":"· C/C++ 编译与 CMake：会写 CMakeLists.txt，能编译、运行自己的工程 | · 面向对象：类 = 属性 + 方法；构造/析构函数；封装——数据安全、隐藏实现、便于协作、防止耦合 | · 已经写好的两个类： |       ‑ Camera 类：封装取...","textChars":262,"textLines":7,"bbox":[57.6,177.6,1142.4,470.4]}
+{"kind":"textbox","id":"sh/ql8jytsj","slide":4,"name":"TextBox 4","text":"Hello Armor · 装甲板位姿解算    P0 复习导入","textPreview":"Hello Armor · 装甲板位姿解算    P0 复习导入","textChars":32,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/doj29oba","slide":4,"name":"TextBox 5","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/jyx0ra1s","slide":4,"text":""}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"P0 · 复习导入","textShapes":6}
+{"kind":"textbox","id":"sh/dgbulwnm","slide":5,"name":"TextBox 1","text":"P0 · 复习导入","textPreview":"P0 · 复习导入","textChars":9,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/cf2tcr61","slide":5,"name":"TextBox 2","text":"现在，程序手里已经有了什么？","textPreview":"现在，程序手里已经有了什么？","textChars":14,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/z2tcnm5s","slide":5,"name":"TextBox 3","text":"· detector.detect(img) 返回 armors（一个 Armor 列表）\n· Armor 结构体里有 left / right 两根灯条（Lightbar）\n· 每根 Lightbar 有 top / bottom 两个端点 → 一块装甲板 = 4 个 2D 像素点\n· 也就是说：识别这一步，已经把“装甲板在哪张图的哪个位置”这件事解决了","textPreview":"· detector.detect(img) 返回 armors（一个 Armor 列表） | · Armor 结构体里有 left / right 两根灯条（Lightbar） | · 每根 Lightbar 有 top / bottom 两个端点 → 一块装甲板 = 4...","textChars":179,"textLines":4,"bbox":[57.6,177.6,720,470.4]}
+{"kind":"textbox","id":"sh/yhkbe1o7","slide":5,"name":"Rounded Rectangle 4","text":"🖼  Armor / Lightbar 结构体关系图\n（left/right → top/bottom → 4 个像素点）","textPreview":"🖼  Armor / Lightbar 结构体关系图 | （left/right → top/bottom → 4 个像素点）","textChars":62,"textLines":2,"bbox":[801.6,182.4,417.6,412.8]}
+{"kind":"textbox","id":"sh/l4bupwny","slide":5,"name":"TextBox 5","text":"Hello Armor · 装甲板位姿解算    P0 复习导入","textPreview":"Hello Armor · 装甲板位姿解算    P0 复习导入","textChars":32,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/032tgr6d","slide":5,"name":"TextBox 6","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/i107q5of","slide":5,"text":""}
+{"kind":"slide","id":"sl/x8f69ofe","slide":6,"title":"P0 · 复习导入","textShapes":7}
+{"kind":"textbox","id":"sh/yhg7epsj","slide":6,"name":"TextBox 1","text":"P0 · 复习导入","textPreview":"P0 · 复习导入","textChars":9,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/zi98nu94","slide":6,"name":"TextBox 2","text":"只有这 4 个 2D 点，够瞄准吗？","textPreview":"只有这 4 个 2D 点，够瞄准吗？","textChars":18,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/87ipkzal","slide":6,"name":"TextBox 3","text":"· 看两张图：3 号车比 4 号车离我们更远 —— 人眼一眼就能判断距离，程序呢？\n· 再看三张图：同一块装甲板，角度都不一样 —— 这是“朝向”的差异\n· 提问互动：仅凭图像上 4 个像素点的坐标，你能猜出装甲板离相机多远、朝哪个方向偏吗？","textPreview":"· 看两张图：3 号车比 4 号车离我们更远 —— 人眼一眼就能判断距离，程序呢？ | · 再看三张图：同一块装甲板，角度都不一样 —— 这是“朝向”的差异 | · 提问互动：仅凭图像上 4 个像素点的坐标，你能猜出装甲板离相机多远、朝哪个方向偏吗？","textChars":121,"textLines":3,"bbox":[57.6,177.6,720,470.4]}
+{"kind":"textbox","id":"sh/98rqt4r6","slide":6,"name":"Rounded Rectangle 4","text":"🖼  同一装甲板：不同距离 + 不同旋转角度\n的对比照片（3 张）","textPreview":"🖼  同一装甲板：不同距离 + 不同旋转角度 | 的对比照片（3 张）","textChars":34,"textLines":2,"bbox":[801.6,182.4,417.6,412.8]}
+{"kind":"textbox","id":"sh/ml07i9sv","slide":6,"name":"TextBox 5","text":"引导学生讨论后再进入下一部分","textPreview":"引导学生讨论后再进入下一部分","textChars":14,"textLines":1,"bbox":[801.6,600,417.6,57.6]}
+{"kind":"textbox","id":"sh/7m98ru9g","slide":6,"name":"TextBox 6","text":"Hello Armor · 装甲板位姿解算    P0 复习导入","textPreview":"Hello Armor · 装甲板位姿解算    P0 复习导入","textChars":32,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/oryp8fah","slide":6,"name":"TextBox 7","text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/x8f69ofe","slide":6,"text":""}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"P1","textShapes":4}
+{"kind":"shape","id":"sh/cb2tkvap","slide":7,"name":"Rectangle 1","bbox":[0,0,17.28,720]}
+{"kind":"textbox","id":"sh/dcbud0ra","slide":7,"name":"TextBox 2","text":"P1","textPreview":"P1","textChars":2,"textLines":1,"bbox":[86.4,259.2,288,134.4]}
+{"kind":"textbox","id":"sh/ydkbm5sv","slide":7,"name":"TextBox 3","text":"为什么需要位姿\n位置够不够？朝向怎么描述？","textPreview":"为什么需要位姿 | 位置够不够？朝向怎么描述？","textChars":21,"textLines":2,"bbox":[345.6,283.2,864,134.4]}
+{"kind":"textbox","id":"sh/zedcfa9g","slide":7,"name":"TextBox 4","text":"Hello Armor · 装甲板位姿解算    P1 为什么需要位姿","textPreview":"Hello Armor · 装甲板位姿解算    P1 为什么需要位姿","textChars":35,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/kzmdova1","slide":7,"name":"TextBox 5","text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/gnmp4jqx","slide":7,"text":""}
+{"kind":"slide","id":"sl/fu1gfa1s","slide":8,"title":"P1 · 为什么需要位姿","textShapes":6}
+{"kind":"textbox","id":"sh/18byd4zy","slide":8,"name":"TextBox 1","text":"P1 · 为什么需要位姿","textPreview":"P1 · 为什么需要位姿","textChars":12,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/g72x4zyd","slide":8,"name":"TextBox 2","text":"位姿 = 位置 + 朝向","textPreview":"位姿 = 位置 + 朝向","textChars":12,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/ri9g7uhw","slide":8,"name":"TextBox 3","text":"· 位置（Position）：一个三维向量 (x, y, z)，装甲板中心在相机坐标系下的坐标\n· 朝向（Orientation / Rotation）：装甲板“转了多少度、往哪边转”\n· 直观理解朝向——借用飞机的三个转动自由度：\n      ‑ 偏航 yaw：绕“上下轴”转，改变朝向左右\n      ‑ 俯仰 pitch：绕“左右轴”转，改变抬头低头\n      ‑ 横滚 roll：绕“前后轴”转，改变侧向倾斜","textPreview":"· 位置（Position）：一个三维向量 (x, y, z)，装甲板中心在相机坐标系下的坐标 | · 朝向（Orientation / Rotation）：装甲板“转了多少度、往哪边转” | · 直观理解朝向——借用飞机的三个转动自由度： |       ‑ 偏航 yaw...","textChars":209,"textLines":6,"bbox":[57.6,177.6,720,470.4]}
+{"kind":"textbox","id":"sh/6h0fypgb","slide":8,"name":"Rounded Rectangle 4","text":"🖼  飞机 yaw / pitch / roll 三轴示意图","textPreview":"🖼  飞机 yaw / pitch / roll 三轴示意图","textChars":31,"textLines":1,"bbox":[801.6,182.4,417.6,412.8]}
+{"kind":"textbox","id":"sh/tkby9kzm","slide":8,"name":"TextBox 5","text":"Hello Armor · 装甲板位姿解算    P1 为什么需要位姿","textPreview":"Hello Armor · 装甲板位姿解算    P1 为什么需要位姿","textChars":35,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/sjix0zy1","slide":8,"name":"TextBox 6","text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/fu1gfa1s","slide":8,"text":""}
+{"kind":"slide","id":"sl/udsvah03","slide":9,"title":"P1 · 为什么需要位姿","textShapes":6}
+{"kind":"textbox","id":"sh/1cfmhgne","slide":9,"name":"TextBox 1","text":"P1 · 为什么需要位姿","textPreview":"P1 · 为什么需要位姿","textChars":12,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/0b65obm9","slide":9,"name":"TextBox 2","text":"先认清两个坐标系","textPreview":"先认清两个坐标系","textChars":8,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/nex4jq5k","slide":9,"name":"TextBox 3","text":"· 装甲板局部坐标系：原点在装甲板中心，x 向右、y 向下、z 指向板外\n      ‑ 物理尺寸（今天要用到）：ARMOR_WIDTH = 0.135 m（灯条间宽），LIGHTBAR_LENGTH = 0.056 m（单根灯条长）\n· 相机坐标系：原点是镜头光心，随相机刚体一起平移、旋转\n· 我们的目标：算出“装甲板坐标系”相对“相机坐标系”的 旋转 R 和 平移 t","textPreview":"· 装甲板局部坐标系：原点在装甲板中心，x 向右、y 向下、z 指向板外 |       ‑ 物理尺寸（今天要用到）：ARMOR_WIDTH = 0.135 m（灯条间宽），LIGHTBAR_LENGTH = 0.056 m（单根灯条长） | · 相机坐标系：原点是镜头光心...","textChars":187,"textLines":4,"bbox":[57.6,177.6,720,470.4]}
+{"kind":"textbox","id":"sh/mdonql4z","slide":9,"name":"Rounded Rectangle 4","text":"🖼  装甲板局部坐标系 + 相机坐标系\n双坐标轴示意图","textPreview":"🖼  装甲板局部坐标系 + 相机坐标系 | 双坐标轴示意图","textChars":28,"textLines":2,"bbox":[801.6,182.4,417.6,412.8]}
+{"kind":"textbox","id":"sh/9gzml0nq","slide":9,"name":"TextBox 5","text":"Hello Armor · 装甲板位姿解算    P1 为什么需要位姿","textPreview":"Hello Armor · 装甲板位姿解算    P1 为什么需要位姿","textChars":35,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/ofq5svm5","slide":9,"name":"TextBox 6","text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/udsvah03","slide":9,"text":""}
+{"kind":"slide","id":"sl/m90b6t0r","slide":10,"title":"P1 · 为什么需要位姿","textShapes":6}
+{"kind":"textbox","id":"sh/xc3mho32","slide":10,"name":"TextBox 1","text":"P1 · 为什么需要位姿","textPreview":"P1 · 为什么需要位姿","textChars":12,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/cbu58j2h","slide":10,"name":"TextBox 2","text":"工程上为什么必须要“姿态”，不只是“位置”","textPreview":"工程上为什么必须要“姿态”，不只是“位置”","textChars":21,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/zelojyl8","slide":10,"name":"TextBox 3","text":"· ① 相机和枪管往往不重合、不共轴 —— 只用 2D 画面中心瞄准，会有系统性偏差\n· ② 真实机器人会自转、会移动，姿态千变万化 —— 需要用装甲板姿态反推它的旋转中心，才能预测它下一刻在哪\n· 一句话：2D 检测解决“看见”，3D 位姿解决“打中”","textPreview":"· ① 相机和枪管往往不重合、不共轴 —— 只用 2D 画面中心瞄准，会有系统性偏差 | · ② 真实机器人会自转、会移动，姿态千变万化 —— 需要用装甲板姿态反推它的旋转中心，才能预测它下一刻在哪 | · 一句话：2D 检测解决“看见”，3D 位姿解决“打中”","textChars":127,"textLines":3,"bbox":[57.6,177.6,720,470.4]}
+{"kind":"textbox","id":"sh/ydcnatkn","slide":10,"name":"Rounded Rectangle 4","text":"🖼  相机与枪管不共轴示意图 +\n机器人自转底盘照片","textPreview":"🖼  相机与枪管不共轴示意图 + | 机器人自转底盘照片","textChars":27,"textLines":2,"bbox":[801.6,182.4,417.6,412.8]}
+{"kind":"textbox","id":"sh/l036l83y","slide":10,"name":"TextBox 5","text":"Hello Armor · 装甲板位姿解算    P1 为什么需要位姿","textPreview":"Hello Armor · 装甲板位姿解算    P1 为什么需要位姿","textChars":35,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/kzu5c32t","slide":10,"name":"TextBox 6","text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/m90b6t0r","slide":10,"text":""}
+{"kind":"slide","id":"sl/jetc3ut0","slide":11,"title":"P2","textShapes":4}
+{"kind":"shape","id":"sh/xcryxg7y","slide":11,"name":"Rectangle 1","bbox":[0,0,17.28,720]}
+{"kind":"textbox","id":"sh/wbih4b6d","slide":11,"name":"TextBox 2","text":"P2","textPreview":"P2","textChars":2,"textLines":1,"bbox":[86.4,259.2,288,134.4]}
+{"kind":"textbox","id":"sh/n69grmpw","slide":11,"name":"TextBox 3","text":"PnP 原理与 API\n从对应点到位姿","textPreview":"PnP 原理与 API | 从对应点到位姿","textChars":19,"textLines":2,"bbox":[345.6,283.2,864,134.4]}
+{"kind":"textbox","id":"sh/250zy18b","slide":11,"name":"TextBox 4","text":"Hello Armor · 装甲板位姿解算    P2 PnP 原理与 API","textPreview":"Hello Armor · 装甲板位姿解算    P2 PnP 原理与 API","textChars":39,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/98rytw72","slide":11,"name":"TextBox 5","text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/jetc3ut0","slide":11,"text":""}
+{"kind":"slide","id":"sl/8f2psfyx","slide":12,"title":"P2 · PnP 原理与 API","textShapes":6}
+{"kind":"textbox","id":"sh/1gbm9s3a","slide":12,"name":"TextBox 1","text":"P2 · PnP 原理与 API","textPreview":"P2 · PnP 原理与 API","textChars":16,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/0f2lgnmp","slide":12,"name":"TextBox 2","text":"Perspective-n-Points 问题","textPreview":"Perspective-n-Points 问题","textChars":23,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/ra943il8","slide":12,"name":"TextBox 3","text":"· 已知 n 组一一对应的点：\n      ‑ 装甲板局部坐标系中的 n 个三维点\n      ‑ 检测器给出的 n 个二维像素点\n· 输入还必须包含当前镜头、当前分辨率对应的内参和畸变系数\n· 求解满足 X_camera = R · X_armor + t 的旋转 R 和平移 t\n· 本课视频固定为 1280 × 1024，换分辨率后必须重新标定","textPreview":"· 已知 n 组一一对应的点： |       ‑ 装甲板局部坐标系中的 n 个三维点 |       ‑ 检测器给出的 n 个二维像素点 | · 输入还必须包含当前镜头、当前分辨率对应的内参和畸变系数 | · 求解满足 X_camera = R · X_armor + t...","textChars":175,"textLines":6,"bbox":[57.6,177.6,720,470.4]}
+{"kind":"textbox","id":"sh/q903ad4n","slide":12,"name":"Rounded Rectangle 4","text":"🖼  经典 PnP 示意图：\n世界坐标系 3D 点 → 图像平面 2D 点\n(R, t) 箭头连接两个坐标系","textPreview":"🖼  经典 PnP 示意图： | 世界坐标系 3D 点 → 图像平面 2D 点 | (R, t) 箭头连接两个坐标系","textChars":55,"textLines":3,"bbox":[801.6,182.4,417.6,412.8]}
+{"kind":"textbox","id":"sh/dcbm583y","slide":12,"name":"TextBox 5","text":"Hello Armor · 装甲板位姿解算    P2 PnP 原理与 API","textPreview":"Hello Armor · 装甲板位姿解算    P2 PnP 原理与 API","textChars":39,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/sb2lcnmd","slide":12,"name":"TextBox 6","text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/8f2psfyx","slide":12,"text":""}
+{"kind":"slide","id":"sl/hgzapcr6","slide":13,"title":"P2 · PnP 原理与 API","textShapes":6}
+{"kind":"textbox","id":"sh/q50nydsj","slide":13,"name":"TextBox 1","text":"P2 · PnP 原理与 API","textPreview":"P2 · PnP 原理与 API","textChars":16,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/bq9orito","slide":13,"name":"TextBox 2","text":"cv::solvePnP 函数签名精讲","textPreview":"cv::solvePnP 函数签名精讲","textChars":19,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/o3i5w3ad","slide":13,"name":"TextBox 3","text":"· OpenCV 已经把 PnP 问题的求解封装成了一个函数，我们只管“喂数据”：","textPreview":"· OpenCV 已经把 PnP 问题的求解封装成了一个函数，我们只管“喂数据”：","textChars":41,"textLines":1,"bbox":[57.6,168,1161.6,105.6]}
+{"kind":"textbox","id":"sh/p4r6p8by","slide":13,"name":"Rounded Rectangle 4","text":"bool cv::solvePnP(\n    InputArray  objectPoints,   // 输入：物体局部坐标系下的 n 个点\n    InputArray  imagePoints,    // 输入：图像上对应的 n 个点\n    InputArray  cameraMatrix,   // 输入：相机内参矩阵（我们会提供）\n    InputArray  distCoeffs,     // 输入：畸变系数（我们会提供）\n    OutputArray rvec,           // 输出：旋转向量\n    OutputArray tvec,           // 输出：平移向量\n    bool useExtrinsicGuess = false,\n    int  flags = SOLVEPNP_ITERATIVE\n);","textPreview":"bool cv::solvePnP( |     InputArray  objectPoints,   // 输入：物体局部坐标系下的 n 个点 |     InputArray  imagePoints,    // 输入：图像上对应的 n 个点 |     Input...","textChars":384,"textLines":10,"bbox":[57.6,264,1166.4,297.6]}
+{"kind":"textbox","id":"sh/21gnuts7","slide":13,"name":"TextBox 5","text":"Hello Armor · 装甲板位姿解算    P2 PnP 原理与 API","textPreview":"Hello Armor · 装甲板位姿解算    P2 PnP 原理与 API","textChars":39,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/32ponyts","slide":13,"name":"TextBox 6","text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/hgzapcr6","slide":13,"text":""}
+{"kind":"slide","id":"sl/6lsnupw7","slide":14,"title":"P2 · PnP 原理与 API","textShapes":6}
+{"kind":"textbox","id":"sh/xc7eds76","slide":14,"name":"TextBox 1","text":"P2 · PnP 原理与 API","textPreview":"P2 · PnP 原理与 API","textChars":16,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/wbydknq1","slide":14,"name":"TextBox 2","text":"输出到底是什么？","textPreview":"输出到底是什么？","textChars":8,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/jepwf2pc","slide":14,"name":"TextBox 3","text":"· tvec：装甲板局部原点在相机坐标系下的位置。本课把原点放在板中心，因此可看作目标中心位置。\n· rvec：旋转向量，方向表示旋转轴，模长表示旋转角度，单位为弧度。\n· Task 05 用 tvec 计算距离和相机指向目标的 yaw/pitch。装甲板自身的欧拉角留作进阶任务。","textPreview":"· tvec：装甲板局部原点在相机坐标系下的位置。本课把原点放在板中心，因此可看作目标中心位置。 | · rvec：旋转向量，方向表示旋转轴，模长表示旋转角度，单位为弧度。 | · Task 05 用 tvec 计算距离和相机指向目标的 yaw/pitch。装甲板自身的欧拉...","textChars":141,"textLines":3,"bbox":[57.6,177.6,720,470.4]}
+{"kind":"textbox","id":"sh/idgvmx8r","slide":14,"name":"Rounded Rectangle 4","text":"🖼  装甲板坐标轴照片 + 相机坐标轴照片\n（并排对比）","textPreview":"🖼  装甲板坐标轴照片 + 相机坐标轴照片 | （并排对比）","textChars":29,"textLines":2,"bbox":[801.6,182.4,417.6,412.8]}
+{"kind":"textbox","id":"sh/5grehs7i","slide":14,"name":"TextBox 5","text":"Hello Armor · 装甲板位姿解算    P2 PnP 原理与 API","textPreview":"Hello Armor · 装甲板位姿解算    P2 PnP 原理与 API","textChars":39,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/kfidonqx","slide":14,"name":"TextBox 6","text":"13","textPreview":"13","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/6lsnupw7","slide":14,"text":""}
+{"kind":"slide","id":"sl/vaxsvy10","slide":15,"title":"P3","textShapes":4}
+{"kind":"shape","id":"sh/547mhg3m","slide":15,"name":"Rectangle 1","bbox":[0,0,17.28,720]}
+{"kind":"textbox","id":"sh/k3y5ov21","slide":15,"name":"TextBox 2","text":"P3","textPreview":"P3","textChars":2,"textLines":1,"bbox":[86.4,259.2,288,134.4]}
+{"kind":"textbox","id":"sh/76p4jqls","slide":15,"name":"TextBox 3","text":"动手实验一\nTask 01~03：解出 tvec / rvec","textPreview":"动手实验一 | Task 01~03：解出 tvec / rvec","textChars":31,"textLines":2,"bbox":[345.6,283.2,864,134.4]}
+{"kind":"textbox","id":"sh/65gnqlk7","slide":15,"name":"TextBox 4","text":"Hello Armor · 装甲板位姿解算    P3 动手实验一","textPreview":"Hello Armor · 装甲板位姿解算    P3 动手实验一","textChars":33,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/t87ml0ji","slide":15,"name":"TextBox 5","text":"14","textPreview":"14","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/vaxsvy10","slide":15,"text":""}
+{"kind":"slide","id":"sl/gny5sjyp","slide":16,"title":"P3 · 动手实验一","textShapes":6}
+{"kind":"textbox","id":"sh/8z2h8bq1","slide":16,"name":"TextBox 1","text":"P3 · 动手实验一","textPreview":"P3 · 动手实验一","textChars":10,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/9kby1g7m","slide":16,"name":"TextBox 2","text":"实验环境 & 点位约定","textPreview":"实验环境 & 点位约定","textChars":11,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/ytkf2h8j","slide":16,"name":"TextBox 3","text":"· 学生只修改两个文件：`class/src/main.cpp` 和 `class/tasks/pose_solver.cpp`。\n· CMake 会自动把 `video.avi` 和 `tiny_resnet.onnx` 复制到 `build/`，可从 build 目录直接运行。\n· 点序固定为左上、右上、右下、左下。Task 01 的 3D 点和 Task 02 的 2D 点必须完全一一对应。\n· 红色 O 点是检测结果，绿色 P 点是重投影结果。两者不重合时，先检查点序和相机标定。","textPreview":"· 学生只修改两个文件：`class/src/main.cpp` 和 `class/tasks/pose_solver.cpp`。 | · CMake 会自动把 `video.avi` 和 `tiny_resnet.onnx` 复制到 `build/`，可从 build 目...","textChars":246,"textLines":4,"bbox":[57.6,177.6,720,470.4]}
+{"kind":"textbox","id":"sh/zutgvm94","slide":16,"name":"Rounded Rectangle 4","text":"🖼  实物装甲板照片，\n绿点标注 1/2/3/4 号点位置","textPreview":"🖼  实物装甲板照片， | 绿点标注 1/2/3/4 号点位置","textChars":30,"textLines":2,"bbox":[801.6,182.4,417.6,412.8]}
+{"kind":"textbox","id":"sh/kv2h4rqp","slide":16,"name":"TextBox 5","text":"Hello Armor · 装甲板位姿解算    P3 动手实验一","textPreview":"Hello Armor · 装甲板位姿解算    P3 动手实验一","textChars":33,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/lwbyxwra","slide":16,"name":"TextBox 6","text":"15","textPreview":"15","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/gny5sjyp","slide":16,"text":""}
+{"kind":"slide","id":"sl/14bup87q","slide":17,"title":"P3 · 动手实验一","textShapes":8}
+{"kind":"textbox","id":"sh/1c7e50ni","slide":17,"name":"TextBox 1","text":"P3 · 动手实验一","textPreview":"P3 · 动手实验一","textChars":10,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/gbedwfmx","slide":17,"name":"TextBox 2","text":"Task 01 · 装甲板局部坐标系的 3D 点","textPreview":"Task 01 · 装甲板局部坐标系的 3D 点","textChars":24,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/rm5czq50","slide":17,"name":"Rounded Rectangle 3","text":"TASK 01","textPreview":"TASK 01","textChars":7,"textLines":1,"bbox":[1046.4,52.8,182.4,40.32]}
+{"kind":"textbox","id":"sh/6lwvql4v","slide":17,"name":"TextBox 4","text":"· 在 `class/tasks/pose_solver.cpp` 的 `object_points()` 中填写四个灯条端点。小装甲板的灯条中心间距为 0.135 m，灯条长度为 0.056 m。","textPreview":"· 在 `class/tasks/pose_solver.cpp` 的 `object_points()` 中填写四个灯条端点。小装甲板的灯条中心间距为 0.135 m，灯条长度为 0.056 m。","textChars":99,"textLines":1,"bbox":[57.6,168,1161.6,105.6]}
+{"kind":"textbox","id":"sh/t8ne10n6","slide":17,"name":"Rounded Rectangle 5","text":"// class/tasks/pose_solver.cpp\n// #### Task 01 ####################################\nconst float half_width =\n    kSmallArmorLightbarDistanceM / 2.0F;\nconst float half_height = kLightbarLengthM / 2.0F;\nreturn {\n    {           ,            , 0.0F},  // 左上\n    {           ,            , 0.0F},  // 右上\n    {           ,            , 0.0F},  // 右下\n    {           ,            , 0.0F},  // 左下\n};","textPreview":"// class/tasks/pose_solver.cpp | // #### Task 01 #################################### | const float half_width = |     kSmallArmorLightba...","textChars":392,"textLines":11,"bbox":[57.6,264,1166.4,321.6]}
+{"kind":"textbox","id":"sh/snedsvml","slide":17,"name":"TextBox 6","text":"· 提示：局部原点在板中心，x 向右、y 向下、z 垂直板面。四个点都在 z = 0 平面上。","textPreview":"· 提示：局部原点在板中心，x 向右、y 向下、z 垂直板面。四个点都在 z = 0 平面上。","textChars":47,"textLines":1,"bbox":[57.6,597.12,1161.6,115.2]}
+{"kind":"textbox","id":"sh/jilcvq54","slide":17,"name":"TextBox 7","text":"Hello Armor · 装甲板位姿解算    P3 动手实验一","textPreview":"Hello Armor · 装甲板位姿解算    P3 动手实验一","textChars":33,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/ihcvml4j","slide":17,"name":"TextBox 8","text":"16","textPreview":"16","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/14bup87q","slide":17,"text":""}
+{"kind":"slide","id":"sl/y5wne50z","slide":18,"title":"P3 · 动手实验一","textShapes":7}
+{"kind":"textbox","id":"sh/wrelszu9","slide":18,"name":"TextBox 1","text":"P3 · 动手实验一","textPreview":"P3 · 动手实验一","textChars":10,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/hsn2l4bu","slide":18,"name":"TextBox 2","text":"Task 02 · 构造 2D 像素点","textPreview":"Task 02 · 构造 2D 像素点","textChars":19,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/itw3upcf","slide":18,"name":"Rounded Rectangle 3","text":"TASK 02","textPreview":"TASK 02","textChars":7,"textLines":1,"bbox":[1046.4,52.8,182.4,40.32]}
+{"kind":"textbox","id":"sh/je5knut0","slide":18,"name":"TextBox 4","text":"· 在 `class/src/main.cpp` 中把检测器给出的四个端点按左上、右上、右下、左下顺序存入 `image_points`。","textPreview":"· 在 `class/src/main.cpp` 中把检测器给出的四个端点按左上、右上、右下、左下顺序存入 `image_points`。","textChars":69,"textLines":1,"bbox":[57.6,168,1161.6,105.6]}
+{"kind":"textbox","id":"sh/4felwzu5","slide":18,"name":"Rounded Rectangle 5","text":"// class/src/main.cpp\n// #### Task 02 ####################################\nconst std::vector<cv::Point2f> image_points{\n    armor.left.top,\n    armor.right.top,\n    armor.right.bottom,\n    armor.left.bottom,\n};\n// 左上、右上、右下、左下\n// 这套顺序必须与 Task 01 的 3D 点完全相同。","textPreview":"// class/src/main.cpp | // #### Task 02 #################################### | const std::vector<cv::Point2f> image_points{ |     armor.l...","textChars":256,"textLines":10,"bbox":[57.6,264,1166.4,321.6]}
+{"kind":"textbox","id":"sh/5gnmp4bq","slide":18,"name":"TextBox 6","text":"Hello Armor · 装甲板位姿解算    P3 动手实验一","textPreview":"Hello Armor · 装甲板位姿解算    P3 动手实验一","textChars":33,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/6hw3y9sb","slide":18,"name":"TextBox 7","text":"17","textPreview":"17","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/y5wne50z","slide":18,"text":""}
+{"kind":"slide","id":"sl/nid43ytk","slide":19,"title":"P3 · 动手实验一","textShapes":7}
+{"kind":"textbox","id":"sh/9gb6xgbi","slide":19,"name":"TextBox 1","text":"P3 · 动手实验一","textPreview":"P3 · 动手实验一","textChars":10,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/8v2pobax","slide":19,"name":"TextBox 2","text":"Task 03 · 调用 cv::solvePnP 得到位姿","textPreview":"Task 03 · 调用 cv::solvePnP 得到位姿","textChars":30,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/vitozqt8","slide":19,"name":"Rounded Rectangle 3","text":"TASK 03","textPreview":"TASK 03","textChars":7,"textLines":1,"bbox":[1046.4,52.8,182.4,40.32]}
+{"kind":"textbox","id":"sh/ahk7qls3","slide":19,"name":"TextBox 4","text":"· 在 `PoseSolver::solve()` 中使用 Task 01 的 3D 点、Task 02 的 2D 点和已标定的相机参数，输出 rvec 与 tvec。","textPreview":"· 在 `PoseSolver::solve()` 中使用 Task 01 的 3D 点、Task 02 的 2D 点和已标定的相机参数，输出 rvec 与 tvec。","textChars":84,"textLines":1,"bbox":[57.6,168,1161.6,105.6]}
+{"kind":"textbox","id":"sh/xkbq10be","slide":19,"name":"Rounded Rectangle 5","text":"// class/tasks/pose_solver.cpp\n// #### Task 03 ####################################\nPoseResult pose;\nconst bool solved = cv::solvePnP(\n    points_3d, image_points,\n    camera_matrix_, distort_coeffs_,\n    pose.rvec, pose.tvec);\nif (!solved || pose.tvec[2] <= 0.0)\n    return std::nullopt;\nreturn pose;","textPreview":"// class/tasks/pose_solver.cpp | // #### Task 03 #################################### | PoseResult pose; | const bool solved = cv::solveP...","textChars":301,"textLines":10,"bbox":[57.6,264,1166.4,320]}
+{"kind":"textbox","id":"sh/wj2psvat","slide":19,"name":"TextBox 6","text":"Hello Armor · 装甲板位姿解算    P3 动手实验一","textPreview":"Hello Armor · 装甲板位姿解算    P3 动手实验一","textChars":33,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/jmd83atk","slide":19,"name":"TextBox 7","text":"18","textPreview":"18","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/nid43ytk","slide":19,"text":""}
+{"kind":"slide","id":"sl/zyxsni5k","slide":20,"title":"P3 · 动手实验一","textShapes":6}
+{"kind":"textbox","id":"sh/qpwjmh8n","slide":20,"name":"TextBox 1","text":"P3 · 动手实验一","textPreview":"P3 · 动手实验一","textChars":10,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/rq50vmp8","slide":20,"name":"TextBox 2","text":"现场演示 & Debug 小贴士","textPreview":"现场演示 & Debug 小贴士","textChars":16,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/4nu1krqh","slide":20,"name":"TextBox 3","text":"· 进入 `lecture4/class` 后运行：`cmake -S . -B build`，再 `cmake --build build --target lecture4_class`。\n· 运行：`./build/lecture4_class`。构建脚本已自动复制视频和模型，不再依赖终端当前目录。\n· 完成 Task 01 至 Task 03 后，画面会显示 tvec、rvec 和位姿计算状态。\n· 参考答案：构建并运行 `lecture4_answer`，再按文件逐处对照。","textPreview":"· 进入 `lecture4/class` 后运行：`cmake -S . -B build`，再 `cmake --build build --target lecture4_class`。 | · 运行：`./build/lecture4_class`。构建脚本已自动复...","textChars":244,"textLines":4,"bbox":[57.6,177.6,720,470.4]}
+{"kind":"textbox","id":"sh/po3itc72","slide":20,"name":"Rounded Rectangle 4","text":"🖼  终端截图：报错信息 +\ncd 回根目录后正常运行","textPreview":"🖼  终端截图：报错信息 + | cd 回根目录后正常运行","textChars":28,"textLines":2,"bbox":[801.6,182.4,417.6,412.8]}
+{"kind":"textbox","id":"sh/2lczih8r","slide":20,"name":"TextBox 5","text":"Hello Armor · 装甲板位姿解算    P3 动手实验一","textPreview":"Hello Armor · 装甲板位姿解算    P3 动手实验一","textChars":33,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/3ml0rmpw","slide":20,"name":"TextBox 6","text":"19","textPreview":"19","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/zyxsni5k","slide":20,"text":""}
+{"kind":"slide","id":"sl/m1wvqtk3","slide":21,"title":"P4","textShapes":4}
+{"kind":"shape","id":"sh/1gbmxs7a","slide":21,"name":"Rectangle 1","bbox":[0,0,17.28,720]}
+{"kind":"textbox","id":"sh/0f2lon6p","slide":21,"name":"TextBox 2","text":"P4","textPreview":"P4","textChars":2,"textLines":1,"bbox":[86.4,259.2,288,134.4]}
+{"kind":"textbox","id":"sh/ra9kryp8","slide":21,"name":"TextBox 3","text":"rvec 揭秘\n旋转向量 / 矩阵 / 欧拉角 / 四元数","textPreview":"rvec 揭秘 | 旋转向量 / 矩阵 / 欧拉角 / 四元数","textChars":29,"textLines":2,"bbox":[345.6,283.2,864,134.4]}
+{"kind":"textbox","id":"sh/qp03yt8n","slide":21,"name":"TextBox 4","text":"Hello Armor · 装甲板位姿解算    P4 rvec 揭秘","textPreview":"Hello Armor · 装甲板位姿解算    P4 rvec 揭秘","textChars":35,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/dcb2t87y","slide":21,"name":"TextBox 5","text":"20","textPreview":"20","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/m1wvqtk3","slide":21,"text":""}
+{"kind":"slide","id":"sl/5onypobq","slide":22,"title":"P4 · rvec 揭秘","textShapes":6}
+{"kind":"textbox","id":"sh/6987itcr","slide":22,"name":"TextBox 1","text":"P4 · rvec 揭秘","textPreview":"P4 · rvec 揭秘","textChars":12,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/7a18rydc","slide":22,"name":"TextBox 2","text":"转一转，看一看","textPreview":"转一转，看一看","textChars":7,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/k7qpgjul","slide":22,"name":"TextBox 3","text":"· 动手环节：拿起装甲板（或转动摄像头），观察终端里 rvec 三个分量如何变化\n· 引导提问：\n      ‑ 只绕一个轴转，rvec 的哪个分量在变？\n      ‑ 转得越多，rvec 的数值变化有什么规律？\n· 先靠直觉猜一猜，再看下一页的数学定义","textPreview":"· 动手环节：拿起装甲板（或转动摄像头），观察终端里 rvec 三个分量如何变化 | · 引导提问： |       ‑ 只绕一个轴转，rvec 的哪个分量在变？ |       ‑ 转得越多，rvec 的数值变化有什么规律？ | · 先靠直觉猜一猜，再看下一页的数学定义","textChars":128,"textLines":5,"bbox":[57.6,177.6,720,470.4]}
+{"kind":"textbox","id":"sh/58zqpov6","slide":22,"name":"Rounded Rectangle 4","text":"🖼  终端滚动输出 roll 数值\n随装甲板转动变化的截图","textPreview":"🖼  终端滚动输出 roll 数值 | 随装甲板转动变化的截图","textChars":30,"textLines":2,"bbox":[801.6,182.4,417.6,412.8]}
+{"kind":"textbox","id":"sh/il87etcv","slide":22,"name":"TextBox 5","text":"Hello Armor · 装甲板位姿解算    P4 rvec 揭秘","textPreview":"Hello Armor · 装甲板位姿解算    P4 rvec 揭秘","textChars":35,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/jmh8nyd0","slide":22,"name":"TextBox 6","text":"21","textPreview":"21","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/5onypobq","slide":22,"text":""}
+{"kind":"slide","id":"sl/c7uhcr6t","slide":23,"title":"P4 · rvec 揭秘","textShapes":5}
+{"kind":"textbox","id":"sh/90vqdczq","slide":23,"name":"TextBox 1","text":"P4 · rvec 揭秘","textPreview":"P4 · rvec 揭秘","textChars":12,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/8zm9k7y5","slide":23,"name":"TextBox 2","text":"rvec 到底是什么","textPreview":"rvec 到底是什么","textChars":10,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/v2d8fmhw","slide":23,"name":"TextBox 3","text":"· 旋转向量（rotation vector）：一种紧凑的旋转表示法\n      ‑ 方向 = 旋转轴方向\n      ‑ 模长（大小） = 绕这根轴旋转的角度（弧度）\n· 好处：只用 3 个数就能表示任意旋转，比 3×3 的旋转矩阵更省","textPreview":"· 旋转向量（rotation vector）：一种紧凑的旋转表示法 |       ‑ 方向 = 旋转轴方向 |       ‑ 模长（大小） = 绕这根轴旋转的角度（弧度） | · 好处：只用 3 个数就能表示任意旋转，比 3×3 的旋转矩阵更省","textChars":119,"textLines":4,"bbox":[57.6,177.6,1142.4,470.4]}
+{"kind":"textbox","id":"sh/a14rmhgb","slide":23,"name":"TextBox 4","text":"Hello Armor · 装甲板位姿解算    P4 rvec 揭秘","textPreview":"Hello Armor · 装甲板位姿解算    P4 rvec 揭秘","textChars":35,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/xovqhcz2","slide":23,"name":"TextBox 5","text":"22","textPreview":"22","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/c7uhcr6t","slide":23,"text":""}
+{"kind":"slide","id":"sl/7qto7e10","slide":24,"title":"P4 · rvec 揭秘","textShapes":6}
+{"kind":"textbox","id":"sh/1sfqxsv6","slide":24,"name":"TextBox 1","text":"P4 · rvec 揭秘","textPreview":"P4 · rvec 揭秘","textChars":12,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/0r6p4nul","slide":24,"name":"TextBox 2","text":"旋转的几种表示法，一张图看懂","textPreview":"旋转的几种表示法，一张图看懂","textChars":14,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/nux8zidc","slide":24,"name":"TextBox 3","text":"· 旋转向量 rvec  --[ cv::Rodrigues，可逆 ]-->  旋转矩阵 rmat\n· 旋转矩阵 rmat  --[ 反三角函数 ]-->  欧拉角（yaw / pitch / roll）\n· 旋转矩阵 rmat  --[ 转换公式 ]-->  四元数 quaternion\n· 三种表示法本质等价，只是在不同场景下各有优劣（下一页展开）","textPreview":"· 旋转向量 rvec  --[ cv::Rodrigues，可逆 ]-->  旋转矩阵 rmat | · 旋转矩阵 rmat  --[ 反三角函数 ]-->  欧拉角（yaw / pitch / roll） | · 旋转矩阵 rmat  --[ 转换公式 ]-->  四元...","textChars":177,"textLines":4,"bbox":[57.6,177.6,720,470.4]}
+{"kind":"textbox","id":"sh/2to76dcr","slide":24,"name":"Rounded Rectangle 4","text":"🖼  rvec → rmat → 欧拉角 / 四元数\n流程示意图","textPreview":"🖼  rvec → rmat → 欧拉角 / 四元数 | 流程示意图","textChars":33,"textLines":2,"bbox":[801.6,182.4,417.6,412.8]}
+{"kind":"textbox","id":"sh/9wzq1svi","slide":24,"name":"TextBox 5","text":"Hello Armor · 装甲板位姿解算    P4 rvec 揭秘","textPreview":"Hello Armor · 装甲板位姿解算    P4 rvec 揭秘","textChars":35,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/ov6p8nux","slide":24,"name":"TextBox 6","text":"23","textPreview":"23","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/7qto7e10","slide":24,"text":""}
+{"kind":"slide","id":"sl/69wfm9o7","slide":25,"title":"P4 · rvec 揭秘","textShapes":6}
+{"kind":"textbox","id":"sh/xg7axgf2","slide":25,"name":"TextBox 1","text":"P4 · rvec 揭秘","textPreview":"P4 · rvec 揭秘","textChars":12,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/cfyt4beh","slide":25,"name":"TextBox 2","text":"从旋转矩阵提取欧拉角（INT_YXZ 约定）","textPreview":"从旋转矩阵提取欧拉角（INT_YXZ 约定）","textChars":22,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/napsr6x0","slide":25,"name":"TextBox 3","text":"· 欧拉角依赖坐标系定义和旋转顺序。它用于描述装甲板自身朝向，不等同于 Task 05 的相机瞄准 yaw/pitch。","textPreview":"· 欧拉角依赖坐标系定义和旋转顺序。它用于描述装甲板自身朝向，不等同于 Task 05 的相机瞄准 yaw/pitch。","textChars":60,"textLines":1,"bbox":[57.6,168,1161.6,105.6]}
+{"kind":"textbox","id":"sh/29wby1wf","slide":25,"name":"Rounded Rectangle 4","text":"// 进阶任务：先明确本队统一的坐标系和旋转顺序\ncv::Matx33d rmat;\ncv::Rodrigues(rvec, rmat);\n\n// 再按统一约定从 rmat 提取欧拉角\n// 角度 = 弧度 * 180.0 / CV_PI\n// 请勿把任意网络公式直接套到当前工程。","textPreview":"// 进阶任务：先明确本队统一的坐标系和旋转顺序 | cv::Matx33d rmat; | cv::Rodrigues(rvec, rmat); |  | // 再按统一约定从 rmat 提取欧拉角 | // 角度 = 弧度 * 180.0 / CV_PI | // 请勿...","textChars":141,"textLines":7,"bbox":[57.6,264,1166.4,211.2]}
+{"kind":"textbox","id":"sh/pc7atgf6","slide":25,"name":"TextBox 5","text":"Hello Armor · 装甲板位姿解算    P4 rvec 揭秘","textPreview":"Hello Armor · 装甲板位姿解算    P4 rvec 揭秘","textChars":35,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/obyt0bel","slide":25,"name":"TextBox 6","text":"24","textPreview":"24","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/69wfm9o7","slide":25,"text":""}
+{"kind":"slide","id":"sl/l0bepsfm","slide":26,"title":"P4 · rvec 揭秘","textShapes":8}
+{"kind":"textbox","id":"sh/uhk36lk7","slide":26,"name":"TextBox 1","text":"P4 · rvec 揭秘","textPreview":"P4 · rvec 揭秘","textChars":12,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/vitkzqlc","slide":26,"name":"TextBox 2","text":"欧拉角的坑：万向锁（Gimbal Lock）","textPreview":"欧拉角的坑：万向锁（Gimbal Lock）","textChars":22,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"shape","id":"sh/8fil4b21","slide":26,"name":"Rounded Rectangle 3","bbox":[57.6,177.6,561.6,470.4]}
+{"kind":"shape","id":"sh/tgr2xg3m","slide":26,"name":"Rounded Rectangle 4","bbox":[648,177.6,561.6,470.4]}
+{"kind":"textbox","id":"sh/md0321kv","slide":26,"name":"TextBox 5","text":"欧拉角","textPreview":"欧拉角","textChars":3,"textLines":1,"bbox":[86.4,192,508.8,48]}
+{"kind":"textbox","id":"sh/7e9kv6lg","slide":26,"name":"TextBox 6","text":"四元数","textPreview":"四元数","textChars":3,"textLines":1,"bbox":[676.8,192,508.8,48]}
+{"kind":"textbox","id":"sh/kbil0r2p","slide":26,"name":"TextBox 7","text":"· 直观、好理解（yaw / pitch / roll）\n· 表示不唯一：不同旋转顺序结果不同\n· 特定姿态下会丢失一个自由度（万向锁）","textPreview":"· 直观、好理解（yaw / pitch / roll） | · 表示不唯一：不同旋转顺序结果不同 | · 特定姿态下会丢失一个自由度（万向锁）","textChars":68,"textLines":3,"bbox":[86.4,244.8,508.8,384]}
+{"kind":"textbox","id":"sh/lcr2tw3a","slide":26,"name":"TextBox 8","text":"· 4 个数 (w, x, y, z)，无奇异点\n· 插值、连续旋转更稳健\n· 不直观，本讲不展开推导\n· 课后可用 quaternions.online 交互体验两者关系","textPreview":"· 4 个数 (w, x, y, z)，无奇异点 | · 插值、连续旋转更稳健 | · 不直观，本讲不展开推导 | · 课后可用 quaternions.online 交互体验两者关系","textChars":86,"textLines":4,"bbox":[676.8,244.8,508.8,384]}
+{"kind":"textbox","id":"sh/lsja143i","slide":26,"name":"TextBox 9","text":"Hello Armor · 装甲板位姿解算    P4 rvec 揭秘","textPreview":"Hello Armor · 装甲板位姿解算    P4 rvec 揭秘","textChars":35,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/krat8z2x","slide":26,"name":"TextBox 10","text":"25","textPreview":"25","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/l0bepsfm","slide":26,"text":""}
+{"kind":"slide","id":"sl/4vyxknqp","slide":27,"title":"P5","textShapes":4}
+{"kind":"shape","id":"sh/kn694nmx","slide":27,"name":"Rectangle 1","bbox":[0,0,17.28,720]}
+{"kind":"textbox","id":"sh/lofadsni","slide":27,"name":"TextBox 2","text":"P5","textPreview":"P5","textChars":2,"textLines":1,"bbox":[86.4,259.2,288,134.4]}
+{"kind":"textbox","id":"sh/mpor6x43","slide":27,"name":"TextBox 3","text":"动手实验二\nTask 04~05：用重投影验证结果，再算距离和瞄准角","textPreview":"动手实验二 | Task 04~05：用重投影验证结果，再算距离和瞄准角","textChars":34,"textLines":2,"bbox":[345.6,283.2,864,134.4]}
+{"kind":"textbox","id":"sh/7qxsfi5o","slide":27,"name":"TextBox 4","text":"Hello Armor · 装甲板位姿解算    P5 动手实验二","textPreview":"Hello Armor · 装甲板位姿解算    P5 动手实验二","textChars":33,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/8r698nm9","slide":27,"name":"TextBox 5","text":"26","textPreview":"26","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/4vyxknqp","slide":27,"text":""}
+{"kind":"slide","id":"sl/3mdove10","slide":28,"title":"P5 · 动手实验二","textShapes":8}
+{"kind":"textbox","id":"sh/q9cz6xkv","slide":28,"name":"TextBox 1","text":"P5 · 动手实验二","textPreview":"P5 · 动手实验二","textChars":10,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/ralgf21g","slide":28,"name":"TextBox 2","text":"Task 04 · 重投影验证 PnP 结果","textPreview":"Task 04 · 重投影验证 PnP 结果","textChars":22,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/0zehcr2x","slide":28,"name":"Rounded Rectangle 3","text":"TASK 04","textPreview":"TASK 04","textChars":7,"textLines":1,"bbox":[1046.4,52.8,182.4,40.32]}
+{"kind":"textbox","id":"sh/10nylwji","slide":28,"name":"TextBox 4","text":"· 在 `PoseSolver::reproject()` 中调用 `cv::projectPoints`，再计算观测点与重投影点之间的 RMS 像素误差。","textPreview":"· 在 `PoseSolver::reproject()` 中调用 `cv::projectPoints`，再计算观测点与重投影点之间的 RMS 像素误差。","textChars":78,"textLines":1,"bbox":[57.6,168,1161.6,105.6]}
+{"kind":"textbox","id":"sh/exwzahkr","slide":28,"name":"Rounded Rectangle 5","text":"// class/tasks/pose_solver.cpp\n// #### Task 04 ####################################\nstd::vector<cv::Point2f> reprojected_points;\ncv::projectPoints(\n    object_points(), pose.rvec, pose.tvec,\n    camera_matrix_, distort_coeffs_, reprojected_points);\n\n// 计算每个观测点与重投影点的平方误差之和\n// RMS = sqrt(平方误差和 / 点数)\n// 红色 O 点应与绿色 P 点基本重合。","textPreview":"// class/tasks/pose_solver.cpp | // #### Task 04 #################################### | std::vector<cv::Point2f> reprojected_points; | cv...","textChars":321,"textLines":10,"bbox":[57.6,264,1166.4,278.4]}
+{"kind":"textbox","id":"sh/zy5gjm1c","slide":28,"name":"TextBox 6","text":"· 验收：点序和标定正确时，绿色 P1 至 P4 应贴近红色 O1 至 O4。误差变大时，优先检查四点顺序和相机分辨率。","textPreview":"· 验收：点序和标定正确时，绿色 P1 至 P4 应贴近红色 O1 至 O4。误差变大时，优先检查四点顺序和相机分辨率。","textChars":60,"textLines":1,"bbox":[57.6,553.92,1161.6,115.2]}
+{"kind":"textbox","id":"sh/o3ehgr29","slide":28,"name":"TextBox 7","text":"Hello Armor · 装甲板位姿解算    P5 动手实验二","textPreview":"Hello Armor · 装甲板位姿解算    P5 动手实验二","textChars":33,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/947ipwje","slide":28,"name":"TextBox 8","text":"27","textPreview":"27","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/3mdove10","slide":28,"text":""}
+{"kind":"slide","id":"sl/i5o3q10v","slide":29,"title":"P5 · 动手实验二","textShapes":7}
+{"kind":"textbox","id":"sh/tk36hwby","slide":29,"name":"TextBox 1","text":"P5 · 动手实验二","textPreview":"P5 · 动手实验二","textChars":10,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/8jup8rad","slide":29,"name":"TextBox 2","text":"Task 05 · 从 tvec 得到距离和瞄准角","textPreview":"Task 05 · 从 tvec 得到距离和瞄准角","textChars":25,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/vmlojmto","slide":29,"name":"Rounded Rectangle 3","text":"TASK 05","textPreview":"TASK 05","textChars":7,"textLines":1,"bbox":[1046.4,52.8,182.4,40.32]}
+{"kind":"textbox","id":"sh/ulc7a1s3","slide":29,"name":"TextBox 4","text":"· 用 tvec 的模长计算距离；根据相机坐标系 x 向右、y 向下、z 向前，计算相机指向目标的 yaw 和 pitch。","textPreview":"· 用 tvec 的模长计算距离；根据相机坐标系 x 向右、y 向下、z 向前，计算相机指向目标的 yaw 和 pitch。","textChars":62,"textLines":1,"bbox":[57.6,168,1161.6,105.6]}
+{"kind":"textbox","id":"sh/h8n6lwbu","slide":29,"name":"Rounded Rectangle 5","text":"// class/tasks/pose_solver.cpp\n// #### Task 05 ####################################\nconst double range_m = cv::norm(pose.tvec);  // distance_m\n\n// aim_angles_deg(const cv::Vec3d & tvec)\nconst double yaw_deg =\n    std::atan2(tvec[0], tvec[2]) * 180.0 / CV_PI;\nconst double pitch_deg =\n    std::atan2(-tvec[1], std::hypot(tvec[0], tvec[2]))\n    * 180.0 / CV_PI;\n\n// 返回并显示 range_m、yaw_deg、pitch_deg。","textPreview":"// class/tasks/pose_solver.cpp | // #### Task 05 #################################### | const double range_m = cv::norm(pose.tvec);  // d...","textChars":396,"textLines":12,"bbox":[57.6,264,1166.4,288]}
+{"kind":"textbox","id":"sh/g7upcra9","slide":29,"name":"TextBox 6","text":"Hello Armor · 装甲板位姿解算    P5 动手实验二","textPreview":"Hello Armor · 装甲板位姿解算    P5 动手实验二","textChars":33,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/bq1o72tk","slide":29,"name":"TextBox 7","text":"28","textPreview":"28","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/i5o3q10v","slide":29,"text":""}
+{"kind":"slide","id":"sl/wnqh07ex","slide":30,"title":"P5 · 动手实验二","textShapes":6}
+{"kind":"textbox","id":"sh/po72d8nm","slide":30,"name":"TextBox 1","text":"P5 · 动手实验二","textPreview":"P5 · 动手实验二","textChars":10,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/o3yl4361","slide":30,"name":"TextBox 2","text":"现场演示 & 互动","textPreview":"现场演示 & 互动","textChars":9,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/bqpkfy5s","slide":30,"name":"TextBox 3","text":"· 检查绿点是否覆盖红点。故意交换两个点，观察重投影误差如何增大。\n· 前后移动装甲板，观察 tvec.z 与距离如何变化。\n· 绕板中心旋转装甲板，观察 rvec 如何变化，同时区分装甲板姿态与相机瞄准角。","textPreview":"· 检查绿点是否覆盖红点。故意交换两个点，观察重投影误差如何增大。 | · 前后移动装甲板，观察 tvec.z 与距离如何变化。 | · 绕板中心旋转装甲板，观察 rvec 如何变化，同时区分装甲板姿态与相机瞄准角。","textChars":104,"textLines":3,"bbox":[57.6,177.6,720,470.4]}
+{"kind":"textbox","id":"sh/apg36do7","slide":30,"name":"Rounded Rectangle 4","text":"🖼  现场画面截图：\n红色观测点、绿色重投影点、RMS 与瞄准角","textPreview":"🖼  现场画面截图： | 红色观测点、绿色重投影点、RMS 与瞄准角","textChars":33,"textLines":2,"bbox":[801.6,182.4,417.6,412.8]}
+{"kind":"textbox","id":"sh/xsr2h8ni","slide":30,"name":"TextBox 5","text":"Hello Armor · 装甲板位姿解算    P5 动手实验二","textPreview":"Hello Armor · 装甲板位姿解算    P5 动手实验二","textChars":33,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/cril836d","slide":30,"name":"TextBox 6","text":"29","textPreview":"29","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/wnqh07ex","slide":30,"text":""}
+{"kind":"slide","id":"sl/lcn6tkb6","slide":31,"title":"P6","textShapes":4}
+{"kind":"shape","id":"sh/dgja98fe","slide":31,"name":"Rectangle 1","bbox":[0,0,17.28,720]}
+{"kind":"textbox","id":"sh/cfa903yt","slide":31,"name":"TextBox 2","text":"P6","textPreview":"P6","textChars":2,"textLines":1,"bbox":[86.4,259.2,288,134.4]}
+{"kind":"textbox","id":"sh/zilsbyx4","slide":31,"name":"TextBox 3","text":"坐标系全景\n从像素到机器人本体 / IMU","textPreview":"坐标系全景 | 从像素到机器人本体 / IMU","textChars":21,"textLines":2,"bbox":[345.6,283.2,864,134.4]}
+{"kind":"textbox","id":"sh/ehsr2dgz","slide":31,"name":"TextBox 4","text":"Hello Armor · 装甲板位姿解算    P6 坐标系全景","textPreview":"Hello Armor · 装甲板位姿解算    P6 坐标系全景","textChars":33,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/1k3ad8fa","slide":31,"name":"TextBox 5","text":"30","textPreview":"30","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/lcn6tkb6","slide":31,"text":""}
+{"kind":"slide","id":"sl/6l0j294r","slide":32,"title":"P6 · 坐标系全景","textShapes":6}
+{"kind":"textbox","id":"sh/kr61sfy1","slide":32,"name":"TextBox 1","text":"P6 · 坐标系全景","textPreview":"P6 · 坐标系全景","textChars":10,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/lszilkfm","slide":32,"name":"TextBox 2","text":"我真的对准了吗？","textPreview":"我真的对准了吗？","textChars":8,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/6t8jupg7","slide":32,"name":"TextBox 3","text":"· 相机坐标系：与相机刚性连接的坐标系，随相机一起平移、旋转；原点 = 镜头光心\n· 思考：如果相机安装时有倾斜，并且和枪管不在同一个位置，会发生什么？\n· 答案：仅靠“装甲板在相机坐标系下的位姿”还不够，还要知道相机相对枪管/机器人本体的安装关系","textPreview":"· 相机坐标系：与相机刚性连接的坐标系，随相机一起平移、旋转；原点 = 镜头光心 | · 思考：如果相机安装时有倾斜，并且和枪管不在同一个位置，会发生什么？ | · 答案：仅靠“装甲板在相机坐标系下的位姿”还不够，还要知道相机相对枪管/机器人本体的安装关系","textChars":124,"textLines":3,"bbox":[57.6,177.6,720,470.4]}
+{"kind":"textbox","id":"sh/7uh0nuxs","slide":32,"name":"Rounded Rectangle 4","text":"🖼  相机与枪管不共轴的实拍照片\n（两套坐标轴叠加标注）","textPreview":"🖼  相机与枪管不共轴的实拍照片 | （两套坐标轴叠加标注）","textChars":29,"textLines":2,"bbox":[801.6,182.4,417.6,412.8]}
+{"kind":"textbox","id":"sh/8vq1wzyd","slide":32,"name":"TextBox 5","text":"Hello Armor · 装甲板位姿解算    P6 坐标系全景","textPreview":"Hello Armor · 装甲板位姿解算    P6 坐标系全景","textChars":33,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/twzipkfy","slide":32,"name":"TextBox 6","text":"31","textPreview":"31","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/6l0j294r","slide":32,"text":""}
+{"kind":"slide","id":"sl/nax4b2dk","slide":33,"title":"P6 · 坐标系全景","textShapes":6}
+{"kind":"textbox","id":"sh/lk3m50nq","slide":33,"name":"TextBox 1","text":"P6 · 坐标系全景","textPreview":"P6 · 坐标系全景","textChars":10,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/0jalwfm5","slide":33,"name":"TextBox 2","text":"完整的坐标变换链条","textPreview":"完整的坐标变换链条","textChars":9,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/nml47a5w","slide":33,"name":"TextBox 3","text":"· 像素坐标系 --（今天学的 solvePnP）--> 相机坐标系\n· 相机坐标系 --（手眼标定，进阶内容）--> 机器人本体坐标系\n· 机器人本体坐标系 --（实际测量安装）--> IMU 坐标系\n· 今天我们打通了第一环；手眼标定和运动预测（卡尔曼滤波）留给后续课程","textPreview":"· 像素坐标系 --（今天学的 solvePnP）--> 相机坐标系 | · 相机坐标系 --（手眼标定，进阶内容）--> 机器人本体坐标系 | · 机器人本体坐标系 --（实际测量安装）--> IMU 坐标系 | · 今天我们打通了第一环；手眼标定和运动预测（卡尔曼滤波）...","textChars":137,"textLines":4,"bbox":[57.6,177.6,720,470.4]}
+{"kind":"textbox","id":"sh/mlc3y54b","slide":33,"name":"Rounded Rectangle 4","text":"🖼  实物机器人标注 imu / base_link /\ncamera 三套坐标轴的照片","textPreview":"🖼  实物机器人标注 imu / base_link / | camera 三套坐标轴的照片","textChars":45,"textLines":2,"bbox":[801.6,182.4,417.6,412.8]}
+{"kind":"textbox","id":"sh/9o3m9knm","slide":33,"name":"TextBox 5","text":"Hello Armor · 装甲板位姿解算    P6 坐标系全景","textPreview":"Hello Armor · 装甲板位姿解算    P6 坐标系全景","textChars":33,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/8nul0fmh","slide":33,"name":"TextBox 6","text":"32","textPreview":"32","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/nax4b2dk","slide":33,"text":""}
+{"kind":"slide","id":"sl/ofu103u5","slide":34,"title":"P7","textShapes":4}
+{"kind":"shape","id":"sh/pwzm1kbm","slide":34,"name":"Rectangle 1","bbox":[0,0,17.28,720]}
+{"kind":"textbox","id":"sh/ovq58fu1","slide":34,"name":"TextBox 2","text":"P7","textPreview":"P7","textChars":2,"textLines":1,"bbox":[86.4,259.2,288,134.4]}
+{"kind":"textbox","id":"sh/byh43utc","slide":34,"name":"TextBox 3","text":"总结与作业\n回顾、答疑、布置任务","textPreview":"总结与作业 | 回顾、答疑、布置任务","textChars":16,"textLines":2,"bbox":[345.6,283.2,864,134.4]}
+{"kind":"textbox","id":"sh/qx8napc7","slide":34,"name":"TextBox 4","text":"Hello Armor · 装甲板位姿解算    P7 总结与作业","textPreview":"Hello Armor · 装甲板位姿解算    P7 总结与作业","textChars":33,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/d0zm54bi","slide":34,"name":"TextBox 5","text":"33","textPreview":"33","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/ofu103u5","slide":34,"text":""}
+{"kind":"slide","id":"sl/1obmtofm","slide":35,"title":"P7 · 总结与作业","textShapes":5}
+{"kind":"textbox","id":"sh/idonexon","slide":35,"name":"TextBox 1","text":"P7 · 总结与作业","textPreview":"P7 · 总结与作业","textChars":10,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/3ex47ip8","slide":35,"name":"TextBox 2","text":"本讲回顾","textPreview":"本讲回顾","textChars":4,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/gb6lcn6x","slide":35,"name":"TextBox 3","text":"· PnP 需要已知几何尺寸、严格一一对应的 3D-2D 点，以及当前镜头和分辨率匹配的相机标定参数。\n· `solvePnP` 求解 X_camera = R · X_armor + t。tvec 是目标中心在相机系下的位置，rvec 是装甲板的旋转向量。\n· 重投影 RMS 把解算结果重新投回图像，是检查点序、尺寸和标定是否可信的第一道工程检查。\n· Task 05 的距离和瞄准 yaw/pitch 来自 tvec；装甲板欧拉角来自 rvec，二者含义不同。\n· 像素到相机是今天完成的一环，后续还需手眼标定和 IMU 坐标变换。","textPreview":"· PnP 需要已知几何尺寸、严格一一对应的 3D-2D 点，以及当前镜头和分辨率匹配的相机标定参数。 | · `solvePnP` 求解 X_camera = R · X_armor + t。tvec 是目标中心在相机系下的位置，rvec 是装甲板的旋转向量。 | · 重...","textChars":269,"textLines":5,"bbox":[57.6,177.6,1142.4,470.4]}
+{"kind":"textbox","id":"sh/hcfm5s72","slide":35,"name":"TextBox 4","text":"Hello Armor · 装甲板位姿解算    P7 总结与作业","textPreview":"Hello Armor · 装甲板位姿解算    P7 总结与作业","textChars":33,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/u943ador","slide":35,"name":"TextBox 5","text":"34","textPreview":"34","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/1obmtofm","slide":35,"text":""}
+{"kind":"slide","id":"sl/m9s3ehgf","slide":36,"title":"P7 · 总结与作业","textShapes":5}
+{"kind":"textbox","id":"sh/5s3atkbq","slide":36,"name":"TextBox 1","text":"P7 · 总结与作业","textPreview":"P7 · 总结与作业","textChars":10,"textLines":1,"bbox":[52.8,33.6,768,38.4]}
+{"kind":"textbox","id":"sh/4rut0fa5","slide":36,"name":"TextBox 2","text":"课后作业","textPreview":"课后作业","textChars":4,"textLines":1,"bbox":[52.8,81.6,1180.8,86.4]}
+{"kind":"textbox","id":"sh/rulsvutw","slide":36,"name":"TextBox 3","text":"· ① 必做：完成 Task 01 至 Task 05，画面显示 tvec、rvec、距离、瞄准 yaw/pitch 和重投影 RMS；运行 `ctest --test-dir build --output-on-failure`。\n· ② 进阶：实现 rvec 到欧拉角的转换，写清采用的坐标系和旋转顺序，并解释它与瞄准 yaw/pitch 的区别。\n· ③ 项目：接入上节课自己的 Camera + Detector，用当前分辨率重新标定后实时显示装甲板位姿。","textPreview":"· ① 必做：完成 Task 01 至 Task 05，画面显示 tvec、rvec、距离、瞄准 yaw/pitch 和重投影 RMS；运行 `ctest --test-dir build --output-on-failure`。 | · ② 进阶：实现 rvec 到欧拉...","textChars":232,"textLines":3,"bbox":[57.6,177.6,1142.4,470.4]}
+{"kind":"textbox","id":"sh/qtcb2psb","slide":36,"name":"TextBox 4","text":"Hello Armor · 装甲板位姿解算    P7 总结与作业","textPreview":"Hello Armor · 装甲板位姿解算    P7 总结与作业","textChars":33,"textLines":1,"bbox":[48,679.68,912,30.72]}
+{"kind":"textbox","id":"sh/dwnax4bm","slide":36,"name":"TextBox 5","text":"35","textPreview":"35","textChars":2,"textLines":1,"bbox":[1171.2,679.68,62.4,30.72]}
+{"kind":"notes","id":"nt/m9s3ehgf","slide":36,"text":""}
+{"kind":"slide","id":"sl/jyhsreh4","slide":37,"title":"Thanks · Q&A","textShapes":2}
+{"kind":"shape","id":"sh/61c7md0r","slide":37,"name":"Rectangle 1","bbox":[0,0,17.28,720]}
+{"kind":"textbox","id":"sh/7m58vyhw","slide":37,"name":"TextBox 2","text":"Thanks · Q&A","textPreview":"Thanks · Q&A","textChars":12,"textLines":1,"bbox":[86.4,268.8,960,115.2]}
+{"kind":"textbox","id":"sh/kzupk3il","slide":37,"name":"TextBox 3","text":"下一讲预告：相机 - 云台手眼标定 与 装甲板运动预测（卡尔曼滤波）","textPreview":"下一讲预告：相机 - 云台手眼标定 与 装甲板运动预测（卡尔曼滤波）","textChars":34,"textLines":1,"bbox":[91.2,374.4,1008,115.2]}
+{"kind":"notes","id":"nt/jyhsreh4","slide":37,"text":""}
