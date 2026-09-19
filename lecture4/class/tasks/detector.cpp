@@ -6,8 +6,6 @@
 
 namespace auto_aim
 {
-  Detector::Detector(const std::string &model_path) : net_(cv::dnn::readNetFromONNX(model_path)) {}
-
   std::list<Armor> Detector::detect(const cv::Mat &bgr_img)
   {
     // 彩色图转灰度图
@@ -128,6 +126,7 @@ namespace auto_aim
 
   void Detector::classify(Armor &armor)
   {
+    cv::dnn::Net net = cv::dnn::readNetFromONNX("tiny_resnet.onnx");
     cv::Mat gray;
     cv::cvtColor(armor.pattern, gray, cv::COLOR_BGR2GRAY);
 
@@ -142,8 +141,8 @@ namespace auto_aim
 
     auto blob = cv::dnn::blobFromImage(input, 1.0 / 255.0, cv::Size(), cv::Scalar());
 
-    net_.setInput(blob);
-    cv::Mat outputs = net_.forward();
+    net.setInput(blob);
+    cv::Mat outputs = net.forward();
 
     // softmax
     float max = *std::max_element(outputs.begin<float>(), outputs.end<float>());
