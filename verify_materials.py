@@ -1,10 +1,22 @@
 import os
 import re
+import sys
 
 from docx import Document
 from pptx import Presentation
 
-GEN = os.path.expandvars(r"%TEMP%\mat_gen").replace("\\", "/")
+# 自己生成一份到临时目录再校验：仓库里的 pptx 可能正被 PowerPoint 占用而未更新，
+# 直接读它会验到旧版本，得到假结论。
+import subprocess
+import tempfile
+
+REPO = os.path.dirname(os.path.abspath(__file__))
+GEN = tempfile.mkdtemp(prefix="lecture4_verify_")
+env = dict(os.environ, LECTURE4_OUT_DIR=GEN)
+for script in ("build_doc.py", "build_ppt.py"):
+    subprocess.run([sys.executable, os.path.join(REPO, script)],
+                   cwd=REPO, env=env, check=True,
+                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 DOCX = os.path.join(GEN, "Lecture4_HelloArmor_教案.docx")
 PPTX = os.path.join(GEN, "Lecture4_HelloArmor_装甲板位姿解算.pptx")
 
