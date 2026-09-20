@@ -695,7 +695,10 @@ slide_content(7, "总结与作业", "课后作业",
     kicker="P7 · 总结与作业")
 slide_end()
 
-out_path = os.path.join(OUT_DIR, "Lecture4_HelloArmor_装甲板位姿解算.pptx")
+# 输出名带 _YOLO版 后缀：旧的那份同名 pptx 是 class/ 版的 37 页成品，
+# 两份并存时靠后缀区分。旧文件确认不再需要后可直接删除。
+PPTX_NAME = "Lecture4_HelloArmor_装甲板位姿解算_YOLO版.pptx"
+out_path = os.path.join(OUT_DIR, PPTX_NAME)
 prs.save(out_path)
 print("SLIDES:", len(prs.slides.__iter__.__self__._sldIdLst))
 print("Saved:", out_path)

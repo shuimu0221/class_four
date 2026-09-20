@@ -5,7 +5,7 @@
 #
 # 产物：
 #   Lecture4_HelloArmor_教案.docx
-#   Lecture4_HelloArmor_装甲板位姿解算.pptx
+#   Lecture4_HelloArmor_装甲板位姿解算_YOLO版.pptx
 #   output/Lecture4_HelloArmor_逐字讲稿.md  与 output/script_parts/*
 #   lecture4/yolo/docs/ppt_images/*（仅在显式传 --images 时重跑）
 #

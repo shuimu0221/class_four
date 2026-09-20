@@ -18,7 +18,7 @@ for script in ("build_doc.py", "build_ppt.py"):
                    cwd=REPO, env=env, check=True,
                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 DOCX = os.path.join(GEN, "Lecture4_HelloArmor_教案.docx")
-PPTX = os.path.join(GEN, "Lecture4_HelloArmor_装甲板位姿解算.pptx")
+PPTX = os.path.join(GEN, "Lecture4_HelloArmor_装甲板位姿解算_YOLO版.pptx")
 
 ok = True
 def check(name, cond, detail=""):

@@ -8,12 +8,12 @@ from pptx import Presentation
 R = r"C:/Users/ziang.xu/Documents/sp/class_four"
 YOLO = os.path.join(R, "lecture4/yolo")
 OUT = os.path.join(R, "output/script_parts/_context.md")
-OLD = OUT + ".bak"
 
 # ---------------- §一  PPT 全文 (39 pages) ----------------
 # 优先读刚生成的版本（仓库里那份可能正被 PowerPoint 占用、尚未更新）
 GEN = os.path.expandvars(r"%TEMP%\mat_gen").replace("\\", "/")
-_cand = [os.path.join(GEN, "Lecture4_HelloArmor_装甲板位姿解算.pptx"),
+_cand = [os.path.join(GEN, "Lecture4_HelloArmor_装甲板位姿解算_YOLO版.pptx"),
+         os.path.join(R, "Lecture4_HelloArmor_装甲板位姿解算_YOLO版.pptx"),
          os.path.join(R, "Lecture4_HelloArmor_装甲板位姿解算.pptx")]
 PPTX_PATH = next(p for p in _cand if os.path.exists(p))
 prs = Presentation(PPTX_PATH)
@@ -60,57 +60,75 @@ for ti, t in enumerate(doc.tables):
         rows.append([c.text.strip().replace("\n", " / ") for c in row.cells])
     doc_tables.append(rows)
 
-# ---------------- §三 原视频覆盖清单（保留，页码重映射）----------------
-old = open(OLD, encoding="utf-8").read()
-m3 = re.search(r"^## 三、.*?(?=^## 四、)", old, re.S | re.M)
-sec3 = m3.group(0) if m3 else ""
+# ---------------- §三 原视频覆盖清单 ----------------
+# 这份清单来自历史素材（两份原视频课），无法从产物推导，所以内嵌在这里。
+#
+# ⚠ 引用幻灯片一律用【标题】而不是页码。用页码会有一个致命问题：每次重建都要
+#    把旧页码重映射成新页码，而重映射不是幂等的——重建两次页码就会漂两次。
+#    标题不随页数变化，因此天然幂等。
+SEC3 = """## 三、两份原视频课的「必须覆盖清单」（用户硬性要求：内容都要讲）
 
+以下内容来自《2025装甲板位姿解算_原视频PPT提取》与《Hello_Armor_原视频PPT提取》两份原始课件/录课，
+**讲稿必须全部覆盖**。括号里给出对应幻灯片的**标题**（不是页码——页码会随课件改版变化，
+按标题在 `一、PPT 全文` 里检索即可）：
 
-def remap(m):
-    n = int(m.group(1))
-    if n <= 17:
-        new = n
-    elif n <= 29:
-        new = n + 1
-    else:
-        new = n + 2
-    return f"第 {new} 页"
+**动机与直观（P0/P1）**
+- 3 号车 vs 4 号车："相比于 4 号车，3 号车离我们更远"——人眼能判断距离（「只有这 4 个 2D 点，够瞄准吗？」）
+- 同一块装甲板三种角度："图片中的三块装甲板有什么不同？"——朝向差异（同上页）
+- 欧拉角按特定顺序定义：先偏航（绕上下轴）、再俯仰（绕左右轴）、后横滚（绕前后轴），每一步相对前一步的结果（「位姿 = 位置 + 朝向」）
+- "看出"三维信息 = 距离远近 + 朝向左右 → 更准确地说：位置用三维向量、旋转用欧拉角 → "程序能解算这些信息吗？"（「位姿 = 位置 + 朝向」「先认清两个坐标系」）
 
+**PnP 与 API（P2）**
+- PnP：n 组一一对应的点 + 相机内参/畸变 → 解 R、t（「Perspective-n-Points 问题」）
+- solvePnP 逐参数讲解（「cv::solvePnP 函数签名精讲」）
+- tvec = 装甲板坐标系原点在相机系下的位置；**rvec 留悬念："先写代码，留个悬念，后面再来解答"**（「输出到底是什么？」）
 
-sec3 = re.sub(r"第 (\d+) 页", remap, sec3)
-sec3 = sec3.replace(
-    "（大部分已落在 37 页课件的对应页上，括号内为对应页）",
-    "（大部分已落在 39 页课件的对应页上，括号内为对应页）",
-)
-# the original-video terminal numbers must not leak into this class's script
-sec3 = sec3.replace(
-    "- \"转一转，看一看\"：转动装甲板观察 rvec 方向和大小；原课演示过终端滚动输出 `roll: 2.01 → 6.40` 这类数值（第 23 页）",
-    "- \"转一转，看一看\"：观察装甲板转动时 rvec 方向和大小怎么变（第 23 页）\n"
-    "  ⚠ 原课是在**终端**滚动打印、且数值量级是 2.01→6.40（疑为角度制的 roll）。**本届程序不往终端打任何东西**，"
-    "tvec/rvec/欧拉角都画在**画面左上角**、原地刷新，且**打的是弧度**（零点几这种小数）。"
-    "讲稿**不得**引用 2.01/6.40 这类数值，也不得说\"终端在滚动\"。",
-)
-sec3 = sec3.replace(
-    "- 经典报错：`CAP_IMAGES: can't find starting number … video.avi`——在 build/ 目录里直接 ./main 导致；`cd` 回项目根目录再 `./build/main`（第 21 页）",
-    "- 经典报错：本届程序的第一个报错**不是视频、是配置**——`YAML::BadFile` / `what(): bad file: configs/yolo.yaml`，"
-    "在 build/ 目录里直接 ./main 导致；`cd` 回 `lecture4/yolo` 再 `./build/main`（第 21 页）",
-)
-sec3 = sec3.replace(
-    "- 点序约定 1→2→3→4（左上起顺时针）；两个点集顺序必须一致（第 16 页）",
-    "- 点序约定：左上、右上、右下、左下（自左上顺时针）；两个点集顺序必须一致（第 16 页）\n"
-    "- **点序陷阱**：`tasks/armor.hpp` 里 `Armor::points` 的注释是**错的**（写的是左上、左下、右下、右上）。"
-    "本届新增一整页专讲这件事（第 18 页），并配一个自查工具「重投影误差」（第 31 页）",
-)
-sec3 = sec3.replace(
-    "- 7 条回顾（第 37 页）；三档作业（第 38 页）；Thanks + 下一讲预告（第 39 页）",
-    "- 8 条回顾（第 37 页）；三档作业（第 38 页）；Thanks + 下一讲预告（第 39 页）",
-)
-sec3 = sec3.replace(
-    "- 原课收尾还带过一遍课程大纲：Lesson 1 Ubuntu shell g++ → Lesson 2 CMake → Lesson 3 OpenCV → Lesson 4 OOP → Lesson 5 PnP（可作 P7 口头回顾素材）",
-    "- 原课收尾还带过一遍课程大纲（可作 P7 口头回顾素材）。注意**本届的编号不同**："
-    "Lecture 2 = Hello C++&&OOP、Lecture 3 = Hello Modern C++、Lecture 4 = 本讲、Lecture 5 = Hello Kalman && Target。"
-    "不要说\"上一讲是 OOP\"——OOP 是上上讲。",
-)
+**rvec 揭秘（P4）——核心章节，必须讲透**
+- "转一转，看一看"：观察装甲板转动时 rvec 方向和大小怎么变（「转一转，看一看」）
+  ⚠ 原课是在**终端**滚动打印、且数值量级是 `roll: 2.01 → 6.40`（疑为角度制的 roll）。
+  **本届程序不往终端打任何东西**，tvec/rvec/欧拉角都画在**画面左上角**、原地刷新，且**打的是弧度**。
+  讲稿**不得**引用 2.01/6.40 这类数值，也不得说"终端在滚动"。
+- rvec 定义：方向 = 旋转轴，模长 = 转角（弧度）；3 个数表示任意旋转（「rvec 到底是什么」）
+- 概念图：旋转向量 rvec --罗德里格斯公式/cv::Rodrigues（可逆）--> 旋转矩阵 rmat --反三角函数--> 欧拉角；rmat --> 四元数（「旋转的几种表示法，一张图看懂」）
+- **INT_YXZ 欧拉角公式：θ₁ = arctan2(m₁₃, m₃₃)，θ₂ = −arcsin(m₂₃)，θ₃ = arctan2(m₂₁, m₂₂)**（「从旋转矩阵提取欧拉角（INT_YXZ 约定）」）
+- 关键对应关系：公式里的 m₁₃ 是 rmat 第 1 行第 3 列，但 **cv::Mat 下标从 0 开始**，所以代码里写 `rmat.at<double>(0, 2)`——这是学生最容易错的地方（同上页）
+- `std::atan2(double, double)` 是 C++ 标准库函数（原课专门给过这个提示）（同上页）
+- 弧度换算：**本届程序打弧度**；57.3 (≈180/π) 只作为"想看度数就这么换算"的补充（同上页注释）
+- 万向锁：欧拉角表示不唯一、特定姿态丢一个自由度；四元数 (w,x,y,z) 无奇异点、插值稳健、不直观（「欧拉角的坑：万向锁（Gimbal Lock）」）
+- **quaternions.online 现场交互演示**：Quaternion 的 W/X/Y/Z 输入框 + Euler Angles 的 X/Y/Z 和 XYZ-Order 下拉框，红 x / 绿 y / 蓝 z 的 3D 网格实时联动——原 Hello Armor 课现场演示过浏览器这个网站（同上页，讲稿应作为现场/课后演示展开）
+
+**动手实验（P3/P5）**
+- 点序约定：左上、右上、右下、左下（自左上顺时针）；两个点集顺序必须一致（「实验环境 & 点位约定」）
+- **点序陷阱**：`tasks/armor.hpp` 里 `Armor::points` 的注释是**错的**（写的是左上、左下、右下、右上）。
+  本届新增一整页专讲这件事（「点序陷阱：注释是错的」），并配一个自查工具「重投影误差」（「重投影误差：给点序配一把尺」）
+- Task 01~03 填空思路与提示，不给答案（「Task 01 · 填写 object_points」至「Task 03 · 调用 cv::solvePnP」）
+- 经典报错：本届程序的第一个报错**不是视频、是配置**——`YAML::BadFile` / `what(): bad file: configs/yolo.yaml`，
+  在 build/ 目录里直接 ./main 导致；`cd` 回 `lecture4/yolo` 再 `./build/main`（「现场演示 & Debug 小贴士」）
+- Task 04：`tvec.at<double>(0)` 取出 double；fmt::format 与 draw_text（「Task 04 · 把 tvec / rvec 打印到画面上」）
+- Task 05：Rodrigues + 反三角函数 + 显示（「Task 05 · rvec → rmat → 欧拉角」）
+- 观察 yaw/pitch/roll 实时变化；邀请学生上台；提问"前后移动（不转动）装甲板，tvec 和 rvec 分别怎么变？"
+  ——答：tvec 变、rvec 基本不变（「现场演示 & 互动」）
+
+**坐标系全景（P6）**
+- 相机坐标系：与相机刚性连接、随相机平移旋转、原点 = 镜头光心；"如果相机安装有倾斜，并且和枪管不在同一个位置，会怎么样？"（「我真的对准了吗？」）
+- "实际车的运动状态千奇百怪，我们需要装甲板姿态来推算出它的旋转中心，进而对运动进行拟合"（「工程上为什么必须要"姿态"，不只是"位置"」）
+- 手眼标定：获取机器人本体坐标系→相机坐标系的变换（机械臂 AX=XB 标定环）（「完整的坐标变换链条」）
+- IMU："机器人本体控制依赖于 imu（陀螺仪），需要知道 imu 到本体坐标系之间的变换"（同上页）
+- 完整链条：像素坐标系 → 相机坐标系 → 机器人本体坐标系 → IMU 坐标系，分别靠 solvePnP / 手眼标定 / 实际安装（同上页）
+
+**收尾（P7）**
+- 8 条回顾（「本讲回顾」）；三档作业（「课后作业」）；Thanks + 下一讲预告（「Thanks · Q&A」）
+- 原课收尾还带过一遍课程大纲（可作 P7 口头回顾素材）。注意**本届的编号不同**：
+  Lecture 2 = Hello C++&&OOP、Lecture 3 = Hello Modern C++、Lecture 4 = 本讲、Lecture 5 = Hello Kalman && Target。
+  不要说"上一讲是 OOP"——OOP 是上上讲。
+
+**可引用的课后参考链接（原课件出现过，可作"放群里"的口头补充）**
+- 万向锁知乎文章：https://zhuanlan.zhihu.com/p/9135205633
+- 线性代数（旋转矩阵背景）B 站视频：https://www.bilibili.com/video/BV1ns41167b9
+- OpenCV 四元数类文档 `cv::Quat`：https://docs.opencv.org/4.x/d4/d4a/classcv_1_1Quat.html
+- 交互演示网站：quaternions.online
+
+"""
 
 # ---------------- §四 工程代码 ----------------
 def read(rel):
@@ -132,7 +150,7 @@ w("")
 w("本文件是撰写《Lecture 4 Hello Armor 装甲板位姿解算》逐字讲稿的唯一素材来源。")
 w("")
 w("> ⚠️ **基准材料**（以本文件为准，不得引用其他版本）：")
-w("> - **课件**：根目录《Lecture4_HelloArmor_装甲板位姿解算.pptx》（**39 页**）")
+w("> - **课件**：根目录《Lecture4_HelloArmor_装甲板位姿解算_YOLO版.pptx》（**39 页**）")
 w("> - **教案**：根目录《Lecture4_HelloArmor_教案.docx》")
 w("> - **工程代码**：`lecture4/yolo`（学生版 `src/main.cpp` + 参考版 `answer/main.cpp`，同一个 CMake 工程）")
 w("> - **配套文档**：`lecture4/yolo/docs/keypoint_order.md`（点序陷阱的完整证据链）、`lecture4/yolo/README.md`")
@@ -248,7 +266,7 @@ w("---")
 w("")
 
 # §三
-w(sec3.rstrip())
+w(SEC3.rstrip())
 w("")
 w("---")
 w("")
@@ -323,4 +341,4 @@ w("按 `q` 退出，按**空格**暂停。")
 
 open(OUT, "w", encoding="utf-8").write("\n".join(L) + "\n")
 sys.stderr.write(f"wrote {len(L)} lines\n")
-sys.stderr.write(f"ppt pages: {len(ppt_sections)}  docx paras: {len(doc_paras)}  sec3: {len(sec3)} chars\n")
+sys.stderr.write(f"ppt pages: {len(ppt_sections)}  docx paras: {len(doc_paras)}  sec3: {len(SEC3)} chars\n")
