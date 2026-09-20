@@ -56,16 +56,20 @@
 | 分段 | 幻灯片 | 总时长 |
 |---|---|---|
 | 00 开场 + 课程地图 | 1–2 | 3 分钟（封面 2 + 路线图 1） |
-| 01 P0 复习导入 | 3–6 | 7 分钟 |
-| 02 P1 为什么需要位姿 | 7–10 | 7 分钟 |
-| 03 P2 PnP 原理与 API | 11–14 | 14 分钟 |
-| 04 P3 上机一（Task 01~03） | 15–20 | 20 分钟 |
-| 05 P4 rvec 揭秘 | 21–26 | 14 分钟 |
-| 06 P5 上机二（Task 04~05） | 27–30 | 16 分钟 |
-| 07 P6 坐标系全景 | 31–33 | 6 分钟 |
-| 08 P7 总结与作业 + Q&A | 34–37 | 3 分钟（Q&A 另计） |
+| 01 P0 复习导入 | 3–6 | 5 分钟 |
+| 02 P1 为什么需要位姿 | 7–10 | 6 分钟 |
+| 03 P2 PnP 原理与 API | 11–14 | 13 分钟 |
+| 04 P3 上机一（Task 01~03 + 点序陷阱） | 15–21 | 24 分钟 |
+| 05 P4 rvec 揭秘 | 22–27 | 14 分钟 |
+| 06 P5 上机二（Task 04~05 + 重投影自查） | 28–32 | 16 分钟 |
+| 07 P6 坐标系全景 | 33–35 | 6 分钟 |
+| 08 P7 总结与作业 + Q&A | 36–39 | 3 分钟（Q&A 另计） |
 
 九段合计正好 90 分钟。**每一段内部各页 ⏱ 之和必须精确等于上表的总时长。**
+
+> 注：这是 YOLO 版的时间表。相比旧的 class/ 版，P0 由 7→5、P1 由 7→6、P2 由 14→13
+> 各压缩一点，腾出的 4 分钟全部给 P3（20→24），用于新增的「点序陷阱」一页和
+> 「环境确认 + answer 约法三章」。总时长不变。
 
 ## 3. 语速与字数（关键！）
 
@@ -101,27 +105,64 @@
 
 ## 5. 技术准确性（红线，违反即作废）
 
+> **本讲用的是 YOLO 版程序 `lecture4/yolo/`。** 旧的 `lecture4/class/`（手写传统 CV
+> 检测器）在本届**不再讲授**，只作为代码保留。以下每条都以 yolo/ 工程为准。
+
 以下内容**必须**与上下文包一致，不得凭记忆改写：
 
-- **任务分布**：Task 01~05 **全部在 `lecture4/class/src/main.cpp` 一个文件里**。学生只改这一个文件。工程没有别的填空点。
+- **任务分布**：Task 01~05 **全部在 `lecture4/yolo/src/main.cpp` 一个文件里**。学生只改这一个文件。工程没有别的填空点。
+- **前置**：学生用的是 lecture2 作业里那套 YOLO 检测器，`tasks/` 与 `tools/` 是从 lecture2 作业**逐字复制**过来的，一行没改。
 - 物理尺寸：`ARMOR_WIDTH = 0.135`（装甲板宽/灯条间距）、`LIGHTBAR_LENGTH = 0.056`（灯条长度），单位米。**Task 01 要求学生用 `± ARMOR_WIDTH / 2` 这样的表达式写**（代码注释原话），不要写死小数。
-- 点序约定：**左上 → 右上 → 右下 → 左下**（以左上角灯条顶点为 1 号，顺时针 1→2→3→4）；两个点集顺序必须一一对应。
-- Task 02 的点：`armor.left.top`、`armor.right.top`、`armor.right.bottom`、`armor.left.bottom`。
+- 点序约定：**左上 → 右上 → 右下 → 左下**（自左上顺时针）。两个点集顺序必须一一对应。
+  ⚠ **`tasks/armor.hpp` 里关于 `Armor::points` 的注释写的是「左上、左下、右下、右上」，那条注释是错的。**
+  真实顺序是左上、右上、右下、左下。这是本讲刻意保留的教学点（注释原样保留，与学生机器上的代码一致）。
+  完整证据链见 `lecture4/yolo/docs/keypoint_order.md`。
+- Task 02 的点：**`armor.points.at(0)` ~ `at(3)`**。
+  ⚠ **不是** `armor.left.top` / `armor.right.top` / …——YOLO 构造函数（`tasks/armor.cpp`）只初始化
+  `confidence` / `box` / `points`，`left` / `right` 走 `Lightbar() {}` 默认构造，取出来是**四个 (0,0)**，
+  solvePnP 会失败或返回垃圾位姿，**而且不会报错**。这是本讲最危险的坑，必须讲。
 - `cv::solvePnP` 六个必填参数顺序：`objectPoints, imagePoints, cameraMatrix, distCoeffs, rvec, tvec`。
-- **Task 04 = 把 tvec / rvec 打印到画面**：改写 `draw_text` 的参数，用 `tvec.at<double>(0/1/2)` 取元素。**不是重投影，工程里没有 `cv::projectPoints`。**
+- **Task 04 = 把 tvec / rvec 打印到画面**：改写 `draw_text` 的参数，用 `tvec.at<double>(0/1/2)` 取元素。
+  ⚠ **yolo 版的 `tools::draw_text` 参数顺序是 `(img, text, point, color, font_scale, thickness)`——
+  color 在 font_scale 之前**，与 class/ 版正好相反。写反会在第 5 个实参上报
+  `cannot convert 'cv::Scalar' to 'double'`。
 - **Task 05 = rvec → rmat → 欧拉角**：`cv::Rodrigues(rvec, rmat)` 得 3×3 旋转矩阵，再用反三角函数提取欧拉角。**这是本讲核心内容（不是了解内容），欧拉角、万向锁、四元数、INT_YXZ 公式都要讲透。**
-- **INT_YXZ 公式**（PPT 第 25 页，i 行 j 列记作 m_ij）：`yaw = atan2(m13, m33)`、`pitch = -asin(m23)`、`roll = atan2(m21, m22)`。**关键换算：公式下标是 1-based，`cv::Mat` 下标是 0-based**，所以 `m13` 在代码里是 `rmat.at<double>(0, 2)`、`m23` 是 `rmat.at<double>(1, 2)`、`m21` 是 `rmat.at<double>(1, 0)`、`m33` 是 `rmat.at<double>(2, 2)`、`m22` 是 `rmat.at<double>(1, 1)`。
-- **弧度与度数（易讲混，务必小心）**：`atan2` / `asin` 算出的是**弧度**；当前 `answer/main.cpp` 的代码**没有乘 57.3，画面显示的三个角是弧度**（数值很小，如 0.12）。PPT 第 25 页注释"乘 57.3 (≈180/π) 换算成角度"要讲，作为"想看度数就这么换算"的补充。**不要把代码说成打印度数，也不要说原课演示的 14.36 这类度数值会出现在学生屏幕上。**
-- 相机内参：`fx = 1286.307063384126`、`fy = 1288.1400736562441`、`cx = 645.34450819155256`、`cy = 483.6163720308021`；畸变系数 5 个（`-0.4756…, 0.2183…, 0.000495…, -0.000346…, 0`）。
-- 构建运行：`cd lecture4/class` → `cmake -B build` → `cmake --build build` → **从项目根目录** `./build/main`。CMake **不会**把 video.avi 复制进 build/，所以在 build/ 里直接 `./main` 会报 `CAP_IMAGES: can't find … video.avi`——解决：`cd` 回 `lecture4/class` 再 `./build/main`。**工程没有测试目标，不要提 ctest。**
-- Detector 是**纯灯条法**（二值化阈值 170、几何筛选、颜色配对），**没有 ONNX/神经网络**——巡场话术里不要提分类置信度、模型加载。
+- **INT_YXZ 公式**（PPT 第 26 页，i 行 j 列记作 m_ij）：`yaw = atan2(m13, m33)`、`pitch = -asin(m23)`、`roll = atan2(m21, m22)`。**关键换算：公式下标是 1-based，`cv::Mat` 下标是 0-based**，所以 `m13` 在代码里是 `rmat.at<double>(0, 2)`、`m23` 是 `rmat.at<double>(1, 2)`、`m21` 是 `rmat.at<double>(1, 0)`、`m33` 是 `rmat.at<double>(2, 2)`、`m22` 是 `rmat.at<double>(1, 1)`。
+- **弧度与度数（易讲混，务必小心）**：`atan2` / `asin` 算出的是**弧度**；当前 `answer/main.cpp` 的代码**没有乘 57.3，画面显示的三个角是弧度**（数值很小，如 0.12）。PPT 第 26 页注释"需要度数时再乘 57.3 (≈180/π)"要讲，作为补充。**不要把代码说成打印度数，也不要说原课演示的 14.36 这类度数值会出现在学生屏幕上。**
+- 相机内参：`fx = 1286.307063384126`、`fy = 1288.1400736562441`、`cx = 645.34450819155256`、`cy = 483.6163720308021`；畸变系数 5 个（`-0.4756…, 0.2183…, 0.000495…, -0.000346…, 0`）。这组内参是**给 `assets/video.avi` 那台相机标的**，换相机需重新标定。
+- 构建运行：`cd lecture4/yolo` → `cmake -B build` → `cmake --build build` → **从项目根目录** `./build/main`。
+  ⚠ 第一个碰相对路径的**不是视频、是配置文件**：`auto_aim::YOLO detector("configs/yolo.yaml")` 走的是裸 `YAML::LoadFile`，
+  在 build/ 里直接 `./main` 会报 **`YAML::BadFile` / `what(): bad file: configs/yolo.yaml`**（不是 CAP_IMAGES）。
+  解决：`cd` 回 `lecture4/yolo` 再 `./build/main`。归因可以讲成教学点：「报错顺序反映的是构造顺序」。
+  另：目录对了但 assets 缺失时报 `Failed to open video: assets/video.avi`。
+  **工程没有测试目标，不要提 ctest。** 依赖是 OpenCV4 / fmt / Eigen3 / yaml-cpp / spdlog / **OpenVINO 2024.6.0**。
+  `answer` 目标**默认不编译**，教师演示需 `-DBUILD_ANSWER=ON`。
+- 取帧：默认读 `assets/video.avi`（`configs/yolo.yaml` 里 `source: video`，`loop: true` 循环播放，
+  25 秒一轮）。程序**不往终端打任何数值**，tvec / rvec / 欧拉角都是 `draw_text` 画在**画面左上角**，
+  数值原地刷新、不滚动。切真相机需同时改 `source: camera` 并 `-DWITH_HIKROBOT=ON` 重新配置 + 装 MVS SDK。
+- 检测器是 **YOLO-pose 端到端**（`assets/yolov5.xml`，OpenVINO 推理）：图片进去，类别 + 4 个关键点出来，
+  **中间没有灯条配对、没有二值化阈值、没有分类网络**。`configs/yolo.yaml` 里的 `threshold` 与
+  `use_traditional` 是历史遗留字段，代码里**已经不用了**——巡场话术不要引导学生去调它们。
+  真正管用的是 `min_confidence`（默认 0.8）。
+- **重投影误差自查**（本讲新增，PPT 第 31 页）：`tools/pnp_check.hpp` 的 `reprojection_error()` 把
+  object_points 用解得的位姿投影回图像，和 img_points 比像素距离。**判读口径：个位数像素=对，两位数=错。**
+  参考实现 `answer/main.cpp` 把这一行画在画面上（`reproj err`），学生版**没有**这一行（学生自己加
+  `#include "tools/pnp_check.hpp"` 即可，header-only）。**不要说死「2~3 px」这个具体数字**——
+  本机无法实测，现场跑出 5 px 老师会下不来台。
 - 变换链条：**像素 → 相机（solvePnP，今天完成）→ 机器人本体（手眼标定）→ IMU（实际安装测量）**。
-- 作业三档：必做（Task 01~05 跑通并显示 tvec/rvec/yaw/pitch/roll）/ 进阶（接入上节课自己的 Camera + Detector 实时显示）/ 思考题（什么姿态下出现万向锁，用 quaternions.online 验证，下节课抽查）。
+- 作业三档：必做（Task 01~05 跑通并显示 tvec/rvec/yaw/pitch/roll）/ 进阶（二选一：A 接 HikRobot 真相机并用自己标定的内参替换；
+  B 补上 `lecture4/homework/` 里 `Buff_Solver::solvePnP()` 的空函数体）/ 思考题（什么姿态下出现万向锁，用 quaternions.online 验证，下节课抽查）。
+- **课程编号**：Lecture 2 = Hello C++&&OOP，Lecture 3 = Hello Modern C++。**上一讲是 Modern C++，OOP 是上上讲。**
+  下一讲是 **Hello Kalman && Target**（目标在动，需要预测）；手眼标定是绕不过去的一步，但不单独占一讲。
 
 **绝对禁止：**
-- ❌ **布置代码里不存在的任务**。凡是要"让同学去做/去实现"的内容，必须落在 `main.cpp` 真实的 `// Task 0X` 注释上。尤其不要把上一版讲稿的重投影 / RMS / 距离 / 瞄准角内容带回来——那些已随代码删除。
+- ❌ **布置代码里不存在的任务**。凡是要"让同学去做/去实现"的内容，必须落在 `src/main.cpp` 真实的 `// Task 0X` 注释上。
+- ❌ **把学生指向 `lecture4/class/`**。那个目录真实存在、能编译能跑、答案也自洽，所以写错了**不会报任何错**——
+  教师会顺利教完一整节旧课。本讲一律用 `lecture4/yolo/`。
 - ❌ 编造 PPT 上没有的数据、案例、公司名、人名。
 - ❌ 在讲 Task 01~02 时**直接念出参考答案**。半宽半高的表达式写法（`± ARMOR_WIDTH / 2`）是代码注释里就有的提示，可以说；但**四个点各自的正负号组合不能直接念出来**，要用提问引导（"左上角在中心的哪一侧？x 应该是正还是负？"）。教案要求"逐个 Task 讲思路（不直接给答案）"。
+- ❌ 说"转动装甲板看数值变化"而不同时说明**程序默认读的是视频**。视频里本身就是手持装甲板在动，
+  把「我转这块板子」改成「盯着视频里那只手」；程序有空格键暂停，但**没有拖拽/跳帧能力**。
 - ❌ 用书面语写口播（"综上所述""由此可见""本节将阐述"）。要说人话："好，那到这儿我们就明白了……""这里有个坑，我第一次也踩过……"
 
 ## 6. 语言风格
