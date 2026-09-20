@@ -1,11 +1,22 @@
 # -*- coding: utf-8 -*-
 """Generate Lecture 4 "Hello Armor" slide deck."""
+import os
+import re
+
 from pptx import Presentation
 from pptx.util import Inches, Pt, Emu
 from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from pptx.enum.shapes import MSO_SHAPE
-import re
+
+# 输出到脚本所在目录（= 仓库根）。不要写死绝对路径：仓库搬过一次，
+# 写死的路径会让脚本一跑就 FileNotFoundError。
+HERE = os.path.dirname(os.path.abspath(__file__))
+assert os.path.isdir(os.path.join(HERE, "lecture4")), (
+    f"脚本似乎不在仓库根目录下（找不到 {HERE}/lecture4）。请从仓库根运行本脚本。"
+)
+# 设 LECTURE4_OUT_DIR 可以把产物生成到别处，便于与已发布版做 diff 对账。
+OUT_DIR = os.environ.get("LECTURE4_OUT_DIR") or HERE
 
 # ---------- palette ----------
 BG_DARK = RGBColor(0x0E, 0x16, 0x2B)
@@ -101,7 +112,9 @@ def add_bullets(tf, bullets, base_size=20, color=TEXT_DARK, bold_color=None, lin
 
 
 def add_footer(slide, part_no, part_name, dark=False):
-    _slide_no[0] += 1
+    # 页脚印的是「真实幻灯片序号」，与讲稿里的「翻到第 N 页」口径一致。
+    # 不要用自增计数器：封面不调用 add_footer，自增会让页脚整体比序号少 1。
+    _slide_no[0] = len(prs.slides._sldIdLst)
     color = TEXT_LIGHT_MUTE if dark else TEXT_MUTE
     left = slide.shapes.add_textbox(Inches(0.5), Inches(7.08), Inches(9.5), Inches(0.32))
     lp = left.text_frame.paragraphs[0]
@@ -241,7 +254,7 @@ def slide_title():
 
     box3 = s.shapes.add_textbox(Inches(0.9), Inches(6.3), Inches(10), Inches(0.6))
     p4 = box3.text_frame.paragraphs[0]
-    r4 = p4.add_run(); r4.text = "主讲人：______　　助教：______　　时长：90 分钟　　承接 Lecture 3《Hello OOP》"
+    r4 = p4.add_run(); r4.text = "主讲人：______　　助教：______　　时长：90 分钟　　承接 Lecture 3《Hello Modern C++》"
     r4.font.size = Pt(14); r4.font.color.rgb = TEXT_LIGHT_MUTE; r4.font.name = "Microsoft YaHei"
     add_image_placeholder(s, Inches(10.6), Inches(0.5), Inches(2.2), Inches(1.2), "SP 队徽", )
 
@@ -251,14 +264,14 @@ def slide_toc():
     add_kicker(s, "课程地图 · Roadmap")
     add_title(s, "今天 90 分钟，我们要走完这条链路")
     items = [
-        ("P0", "复习导入：上节课我们手里有了什么", "7 min"),
-        ("P1", "为什么装甲板需要“位姿”而不只是位置", "7 min"),
-        ("P2", "PnP 原理与 cv::solvePnP 接口精讲", "14 min"),
-        ("P3", "动手实验一：Task 01~03，解出 tvec / rvec", "20 min"),
+        ("P0", "复习导入：你 lecture2 作业里那套 YOLO 检测器", "5 min"),
+        ("P1", "为什么装甲板需要“位姿”而不只是位置", "6 min"),
+        ("P2", "PnP 原理与 cv::solvePnP 接口精讲", "13 min"),
+        ("P3", "动手实验一：Task 01~03，解出 tvec / rvec", "24 min"),
         ("P4", "rvec 揭秘：旋转向量／矩阵／欧拉角／四元数", "14 min"),
         ("P5", "动手实验二：Task 04~05，把旋转变成角度", "16 min"),
         ("P6", "坐标系全景：从像素到机器人本体 / IMU", "6 min"),
-        ("P7", "总结、答疑与作业布置", "4 min"),
+        ("P7", "总结、答疑与作业布置", "3 min"),
     ]
     top = Inches(1.75)
     for i, (tag, text, mins) in enumerate(items):
@@ -357,8 +370,12 @@ def slide_end():
     r.font.size = Pt(48); r.font.bold = True; r.font.color.rgb = TEXT_LIGHT; r.font.name = "Microsoft YaHei"
     box2 = s.shapes.add_textbox(Inches(0.95), Inches(3.9), Inches(10.5), Inches(1.2))
     p2 = box2.text_frame.paragraphs[0]
-    r2 = p2.add_run(); r2.text = "下一讲预告：相机 - 云台手眼标定 与 装甲板运动预测（卡尔曼滤波）"
+    r2 = p2.add_run(); r2.text = "下一讲：Hello Kalman && Target —— 目标还在动，你得预测它下一刻在哪"
     r2.font.size = Pt(18); r2.font.color.rgb = TEXT_LIGHT_MUTE; r2.font.name = "Microsoft YaHei"
+    box3 = s.shapes.add_textbox(Inches(0.95), Inches(4.5), Inches(10.5), Inches(1.0))
+    p3 = box3.text_frame.paragraphs[0]
+    r3 = p3.add_run(); r3.text = "（手眼标定是自瞄绕不过去的一步，但不会单独占一讲）"
+    r3.font.size = Pt(14); r3.font.color.rgb = TEXT_LIGHT_MUTE; r3.font.name = "Microsoft YaHei"
 
 
 # ---------------------------------------------------------------
@@ -370,21 +387,22 @@ slide_toc()
 
 # P0 复习导入
 slide_section(0, "复习导入", "上节课我们手里有了什么？")
-slide_content(0, "复习导入", "上节课回顾（Hello OOP）",
+slide_content(0, "复习导入", "上节课回顾（Hello Modern C++）",
     [("C/C++ 编译与 CMake：会写 CMakeLists.txt，能编译、运行自己的工程", 0),
      ("**面向对象**：类 = 属性 + 方法；构造/析构函数；**封装**——数据安全、隐藏实现、便于协作、防止耦合", 0),
      ("已经写好的两个类：", 0),
      ("**Camera** 类：封装取图细节，对外只给一帧图像 + 时间戳", 1),
-     ("**识别器 / Detector** 类：目标是识别装甲板并分类（位置、颜色、数字）", 1),
-     ("两种识别思路：传统灯条法 / YOLO-pose 端到端", 1),
+     ("**YOLO 检测器**：目标是识别装甲板并分类（位置、颜色、数字）", 1),
+     ("**今天用的就是你在 lecture2 作业里跑通的那套检测器——tasks/ 和 tools/ 一行没改**", 1),
      ("作业：连接工业相机，封装相机类，用神经网络识别装甲板", 0)],
     kicker="P0 · 复习导入")
 slide_content(0, "复习导入", "现在，程序手里已经有了什么？",
     [("**detector.detect(img)** 返回 **armors**（一个 Armor 列表）", 0),
-     ("**Armor** 结构体里有 **left / right** 两根灯条（Lightbar）", 0),
-     ("每根 **Lightbar** 有 **top / bottom** 两个端点 → 一块装甲板 = **4 个 2D 像素点**", 0),
+     ("**Armor.points** 就是 YOLO 直接回归出来的 **4 个关键点**（左上、右上、右下、左下）", 0),
+     ("YOLO-pose 是**端到端**的一步：图片进去，类别 + 4 个关键点出来，**中间没有“灯条配对”这个步骤**", 0),
+     ("⚠ Armor 里虽然还留着 left / right 两个成员，但走 YOLO 这条路**从未给它们赋值**，取出来全是 (0,0)——那是传统灯条法的历史包袱", 0),
      ("也就是说：识别这一步，已经把“装甲板在哪张图的哪个位置”这件事解决了", 0)],
-    kicker="P0 · 复习导入", image_label="Armor / Lightbar 结构体关系图\n（left/right → top/bottom → 4 个像素点）")
+    kicker="P0 · 复习导入", image_label="Armor 结构体：points[0..3] → 4 个像素点\n（旁注：left/right 是历史包袱，本讲不用）")
 slide_content(0, "复习导入", "只有这 4 个 2D 点，够瞄准吗？",
     [("看两张图：3 号车比 4 号车离我们更远 —— 人眼一眼就能判断距离，程序呢？", 0),
      ("再看三张图：同一块装甲板，角度都不一样 —— 这是“朝向”的差异", 0),
@@ -445,11 +463,14 @@ slide_content(2, "PnP 原理与 API", "输出到底是什么？",
 # P3 动手实验一
 slide_section(3, "动手实验一", "Task 01~03：解出 tvec / rvec")
 slide_content(3, "动手实验一", "实验环境 & 点位约定",
-    [("项目结构：`class/src/main.cpp` 是你要填空的文件；`tasks/` 下的 Detector 已经帮你写好，直接调用即可", 0),
-     ("**关键约定**：4 个关键点的顺序 —— 以左上角灯条**顶点**为 1 号，**顺时针** 1→2→3→4", 0),
-     ("1 = 左灯条上端　2 = 右灯条上端　3 = 右灯条下端　4 = 左灯条下端", 1),
+    [("打开 **lecture4/yolo** 工程：所有填空都在 **src/main.cpp** 一个文件里；`tasks/` 下的 YOLO 检测器就是你 lecture2 作业里那一份，一个字没改", 0),
+     ("**先确认环境**：`cd lecture4/yolo && cmake -B build`。这一步课前已经验过，课上只花 30 秒确认", 1),
+     ("**运行目录有约束**：configs / assets / logs 都按相对路径找，必须在 `lecture4/yolo/` 下运行", 1),
+     ("**约法三章**：这 20 分钟不要打开 `answer/main.cpp`；卡住了举手。等你自己的跑起来，我在投影上跑参考版对照", 1),
+     ("**关键约定**：4 个关键点的顺序 —— 左上、右上、右下、左下（自左上顺时针）", 0),
+     ("物理上它们就是左灯条顶端 / 右灯条顶端 / 右灯条底端 / 左灯条底端，但**程序里没有“灯条”这个对象**了", 1),
      ("这个顺序在 object_points 和 img_points 里必须完全一致，否则解出来的位姿是错的", 0)],
-    kicker="P3 · 动手实验一", image_label="实物装甲板照片，\n绿点标注 1/2/3/4 号点位置")
+    kicker="P3 · 动手实验一", image_label="实物装甲板照片，\n绿点标注 0/1/2/3 号点位置")
 slide_code(3, "动手实验一", "Task 01 · 填写 object_points",
     [("在装甲板**局部坐标系**下写出 4 个点的 (x, y, 0) 坐标，结合 ARMOR_WIDTH / LIGHTBAR_LENGTH 和上一页的点序", 0)],
     """static const double LIGHTBAR_LENGTH = 0.056;  // 灯条长度  单位: 米
@@ -464,8 +485,16 @@ static const std::vector<cv::Point3f> object_points {
     {      ,      , 0 },  // 点 3  右下
     {      ,      , 0 }   // 点 4  左下
 };""",
-    hint_bullets=[("提示：原点在板中心，x 向右为正、y 向下为正，半宽 = ARMOR_WIDTH/2，半高 = LIGHTBAR_LENGTH/2", 0)],
+    hint_bullets=[("提示：原点在板中心，x 向右为正、y 向下为正，半宽 = ARMOR_WIDTH/2，半高 = LIGHTBAR_LENGTH/2；请用 ± ARMOR_WIDTH / 2 这样的表达式填写（代码中的模板已被注释，先解注释再填）", 0)],
     task_tag="TASK 01", kicker="P3 · 动手实验一", code_h=Inches(3.35))
+slide_content(3, "动手实验一", "点序陷阱：注释是错的",
+    [("`tasks/armor.hpp` 里关于 `Armor::points` 的注释写的是「左上、左下、右下、右上」", 0),
+     ("**实测下来是「左上、右上、右下、左下」** —— 注释和真实顺序正好反了", 0),
+     ("怎么证明（现场 3 秒）：`draw_points` 已经在画那 4 个点了，按下标标上 0/1/2/3 就能看出来", 1),
+     ("更硬的办法：把 object_points 换成注释里那个顺序，重编一次，看 `reproj err` 从个位数跳到几十", 1),
+     ("**这是本讲最值得带走的一条**：注释是人写的、会过期；代码和数据不会撒谎，冲突时信实测", 0)],
+    kicker="P3 · 动手实验一", image_label="同一块装甲板：\n左图点序正确 / 右图点序写反，\n叠加 reproj err 数值对比",
+    caption="顺序写错不会报错、画面也正常，只有重投影误差能一眼判死")
 slide_code(3, "动手实验一", "Task 02 · 填写 img_points",
     [("把检测器已经给出的 2D 像素点，按同样的 1→2→3→4 顺序装进 img_points", 0)],
     """auto armors = detector.detect(img);
@@ -480,8 +509,9 @@ if (!armors.empty()) {
     //
     // 提示：
     // - 看看 Armor 结构体有哪些成员；
-    // - armor 的成员 left 和 right 是两根灯条 (Lightbar)；
-    // - Lightbar 的 top / bottom 端点就是我们要的点。
+    // - 4 个关键点就在 armor.points 里，顺序已由检测器规范好；
+    // - ⚠ 不要用 armor.left / armor.right：走 YOLO 这条路它们从未被赋值，
+    //   取出来是四个 (0,0)，solvePnP 会失败或返回垃圾位姿。
     // ###########################################################""",
     task_tag="TASK 02", kicker="P3 · 动手实验一", code_h=Inches(3.35))
 slide_code(3, "动手实验一", "Task 03 · 调用 cv::solvePnP",
@@ -494,21 +524,27 @@ cv::solvePnP( , , , , rvec, tvec);
 // ############################################################""",
     task_tag="TASK 03", kicker="P3 · 动手实验一", code_h=Inches(1.7))
 slide_content(3, "动手实验一", "现场演示 & Debug 小贴士",
-    [("编译运行：`cmake -B build && cmake --build build`，再 `./build/main`", 0),
+    [("编译运行：`cd lecture4/yolo && cmake -B build && cmake --build build`，再 `./build/main`", 0),
      ("跑通后画面上会打印出 tvec 的数值（还未显示，下一环节我们再打出来）", 0),
-     ("**常见报错**：`CAP_IMAGES: can't find … video.avi`", 0),
-     ("原因：在错误的目录下运行了可执行文件；解决：`cd` 回项目根目录，再 `./build/main`", 1)],
-    kicker="P3 · 动手实验一", image_label="终端截图：报错信息 +\ncd 回根目录后正常运行")
+     ("**常见报错 ①**：`YAML::BadFile` / `what(): bad file: configs/yolo.yaml`", 0),
+     ("原因：在错误的目录下运行了可执行文件。注意第一个报错的**不是视频、是模型**——报错顺序反映的是构造顺序", 1),
+     ("解决：`cd` 回 `lecture4/yolo/`，再 `./build/main`", 1),
+     ("**常见报错 ②**：`Failed to open video: assets/video.avi`", 0),
+     ("原因：目录对了但 assets/ 缺失（多半是拷贝时漏了，约 60MB）。解决：补齐 assets/ 三个文件", 1),
+     ("**常见报错 ③**：`error while loading shared libraries: libopenvino.so.*`", 0),
+     ("解决：`source /opt/intel/openvino_2024.6.0/setupvars.sh`", 1)],
+    kicker="P3 · 动手实验一", image_label="终端截图：YAML::BadFile 报错 +\ncd 回根目录后正常运行")
 
 # P4 rvec 揭秘
 slide_section(4, "rvec 揭秘", "旋转向量 / 矩阵 / 欧拉角 / 四元数")
 slide_content(4, "rvec 揭秘", "转一转，看一看",
-    [("**动手环节**：拿起装甲板（或转动摄像头），观察终端里 rvec 三个分量如何变化", 0),
+    [("**观察环节**：盯着**画面左上角**那三行数字，看视频里那只手转动装甲板时它们怎么变", 0),
+     ("（程序默认循环播放 `assets/video.avi`——里面就是手持装甲板在动，25 秒一轮，不用等很久）", 1),
      ("引导提问：", 0),
      ("只绕一个轴转，rvec 的哪个分量在变？", 1),
      ("转得越多，rvec 的数值变化有什么规律？", 1),
      ("先靠直觉猜一猜，再看下一页的数学定义", 0)],
-    kicker="P4 · rvec 揭秘", image_label="终端滚动输出 roll 数值\n随装甲板转动变化的截图")
+    kicker="P4 · rvec 揭秘", image_label="程序运行截图：画面左上角的\n三行数字 + 视频里手持装甲板的姿态")
 slide_content(4, "rvec 揭秘", "rvec 到底是什么",
     [("**旋转向量（rotation vector）**：一种紧凑的旋转表示法", 0),
      ("**方向** = 旋转轴方向", 1),
@@ -528,7 +564,8 @@ yaw   = atan2( m13, m33 )
 pitch = -asin( m23 )
 roll  = atan2( m21, m22 )
 
-// 注意：atan2 / asin 算出来是弧度，乘 57.3 (≈180/π) 换算成角度""",
+// 注意：atan2 / asin 算出来是弧度。本讲程序直接显示弧度（画面上的角是很小的数，如 0.12），
+// 需要度数时再乘 57.3 (≈180/π) 换算""",
     kicker="P4 · rvec 揭秘", code_h=Inches(2.2))
 slide_compare(4, "rvec 揭秘", "欧拉角的坑：万向锁（Gimbal Lock）",
     "欧拉角", [("直观、好理解（yaw / pitch / roll）", 0),
@@ -569,11 +606,21 @@ tools::draw_text(img, fmt::format(
 // - cv::Mat 下标从 0 开始；
 // - 取元素方式和 tvec 类似，例如 rmat.at<double>(0, 2)。""",
     task_tag="TASK 05", kicker="P5 · 动手实验二", code_h=Inches(3.0))
+slide_content(5, "动手实验二", "重投影误差：给点序配一把尺",
+    [("前面反复说「点序错了不报错、最难查」——现在给你一个一眼判死的工具", 0),
+     ("**做法**：把 object_points 用解得的位姿**投影回图像**，和检测到的 img_points 比像素距离", 0),
+     ("**判读口径**：个位数像素 = 对的；两位数 = 错的。中间没有灰色地带", 0),
+     ("参考实现 `./build/answer` 已经把这一行画在画面上（`reproj err`），比学生版多这一行", 1),
+     ("学生自己那份没有这一行——想自查就 `#include \"tools/pnp_check.hpp\"` 加上（header-only，不用改 CMake）", 1),
+     ("**这条和上一页的点序陷阱是配对的**：一个说坑在哪，一个给出路", 0)],
+    kicker="P5 · 动手实验二", image_label="左右对比截图：\n点序正确 reproj err ≈ 3 px /\n点序写反 reproj err ≈ 80 px")
 slide_content(5, "动手实验二", "现场演示 & 互动",
-    [("转动装甲板：画面上 yaw / pitch / roll 数值实时变化", 0),
+    [("观察画面左上角：视频里那只手转动装甲板时，yaw / pitch / roll 数值实时变化", 0),
+     ("（按**空格键可以暂停**，停在某一帧上慢慢看；再按一次继续）", 1),
      ("邀请 1~2 位同学上台演示，说说自己观察到的变化规律", 0),
-     ("提问：把装甲板前后移动（不转动），tvec 和 rvec 分别会怎么变？", 0)],
-    kicker="P5 · 动手实验二", image_label="现场画面截图：\nyaw/pitch/roll 数值叠加在图像上")
+     ("提问：把装甲板前后移动（不转动），tvec 和 rvec 分别会怎么变？", 0),
+     ("验收判据：tvec.z 在 0.2~0.7 之间、跟着画面里的远近连续变、不乱跳。别用「框画出来了」当判据——画框那行在 Task 02 之前，一个字不填它也画", 0)],
+    kicker="P5 · 动手实验二", image_label="程序运行截图：\nyaw/pitch/roll 三行数值叠加在画面上")
 
 # P6 坐标系全景
 slide_section(6, "坐标系全景", "从像素到机器人本体 / IMU")
@@ -598,16 +645,21 @@ slide_content(7, "总结与作业", "本讲回顾",
      ("**tvec** = 装甲板原点在相机坐标系下的位置", 0),
      ("**rvec** --Rodrigues--> **rmat** --反三角函数--> **欧拉角** / 四元数", 0),
      ("欧拉角存在**万向锁**问题，四元数更稳健", 0),
+     ("**object_points 与 img_points 必须一一对应**；写错了不报错、画面正常、数值有值，但位姿全错", 0),
+     ("自查手段：**重投影误差**（个位数像素=对，两位数=错）；顺带记住「注释会过期，实测不会撒谎」", 0),
      ("完整链条：像素 → 相机（solvePnP）→ 机器人本体（手眼标定）→ IMU（安装测量）", 0)],
-    kicker="P7 · 总结与作业", base_size=18)
+    kicker="P7 · 总结与作业", base_size=17)
 slide_content(7, "总结与作业", "课后作业",
     [("① **必做**：完成 Task 01~05（课上未完成的部分），跑通并正确显示 tvec / rvec / yaw / pitch / roll", 0),
-     ("② **进阶**：把 solvePnP 接入上节课自己写的 Camera + Detector 类，实时显示真实摄像头画面中装甲板的位姿", 0),
-     ("③ **思考题**：什么姿态下欧拉角会出现万向锁？用 **quaternions.online** 验证你的猜想，下节课抽查", 0)],
+     ("② **进阶（二选一）**：A 接 HikRobot 真相机（需 MVS SDK，用自己标定的内参替换 main.cpp 顶部那两组）；"
+      "B 补上 `lecture4/homework/` 里 `Buff_Solver::solvePnP()` 的空函数体（能量机关脚手架已经搭好，注意它的 OpenVINO 路径与 yolo/ 工程不同）", 0),
+     ("③ **思考题**：什么姿态下欧拉角会出现万向锁？用 **quaternions.online** 验证你的猜想，下节课抽查", 0),
+     ("（可选自查练习）故意把 object_points 第 2、4 点对调，记录 reproj err 从多少变成多少，并解释为什么 tvec 仍然「看起来像个正常数字」", 0)],
     kicker="P7 · 总结与作业")
 slide_end()
 
-out_path = r"C:\Users\ziang.xu\Documents\class_four\Lecture4_HelloArmor_装甲板位姿解算.pptx"
+out_path = os.path.join(OUT_DIR, "Lecture4_HelloArmor_装甲板位姿解算.pptx")
 prs.save(out_path)
 print("SLIDES:", len(prs.slides.__iter__.__self__._sldIdLst))
 print("Saved:", out_path)
+print("提示：请用 git diff 复核生成的 pptx，确认没有把手工修正覆盖掉。")
