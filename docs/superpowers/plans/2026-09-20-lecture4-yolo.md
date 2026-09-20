@@ -772,8 +772,9 @@ int main(int argc, char *argv[])
 
 ```bash
 TARGET=/c/Users/ziang.xu/Documents/sp/class_four/lecture4/yolo
-echo "--- 项目内 include 是否都能找到 ---"
+echo "--- 项目内 include 是否都能找到（外部库用双引号写法的要排除，如 fmt/core.h）---"
 grep -o '#include "[^"]*"' "$TARGET/src/main.cpp" | sed 's/#include "//;s/"//' | while read -r inc; do
+  echo "$inc" | grep -Eq '^(fmt|spdlog|opencv2|Eigen|yaml-cpp|openvino)/' && continue
   [ -f "$TARGET/$inc" ] || echo "MISSING: $inc"
 done
 echo "--- Task01 必须仍是注释状态（学生要自己填）---"
@@ -955,17 +956,41 @@ int main(int argc, char *argv[])
 
 ```bash
 TARGET=/c/Users/ziang.xu/Documents/sp/class_four/lecture4/yolo
-echo "--- answer 的项目内 include ---"
+echo "--- answer 的项目内 include（外部库用双引号写法的要排除）---"
 grep -o '#include "[^"]*"' "$TARGET/answer/main.cpp" | sed 's/#include "//;s/"//' | while read -r inc; do
+  echo "$inc" | grep -Eq '^(fmt|spdlog|opencv2|Eigen|yaml-cpp|openvino)/' && continue
   [ -f "$TARGET/$inc" ] || echo "MISSING: $inc"
 done
 echo "--- object_points 顺序：点1 与 点4 的 x 都应为负 (左上/左下) ---"
 grep -n "ARMOR_WIDTH / 2" "$TARGET/answer/main.cpp"
-echo "--- 两个 main.cpp 的 ObjectPoint 顺序必须一致（点2 的 x 为正）---"
-grep -c "^{ARMOR_WIDTH / 2, -LIGHTBAR_LENGTH / 2, 0}" "$TARGET/answer/main.cpp"
+echo "--- object_points 的行序必须是 -,+,+,- ---"
+grep -o "^-*ARMOR_WIDTH / 2\|^ *{-\?ARMOR_WIDTH / 2" "$TARGET/answer/main.cpp" | head -4
 echo "--- pnp_check.hpp 的符号被 answer 正确调用 ---"
 grep -n "reprojection_error" "$TARGET/answer/main.cpp" "$TARGET/tools/pnp_check.hpp"
 ```
+
+再用一个不靠眼力的检查确认点序 —— 这是本讲最关键的不变量：
+
+```bash
+"$TEMP/yolo_probe_venv/Scripts/python.exe" - <<'PY'
+import re
+src = open(r"C:/Users/ziang.xu/Documents/sp/class_four/lecture4/yolo/answer/main.cpp",
+           encoding="utf-8").read()
+block = re.search(r"object_points\{(.*?)\};", src, re.S).group(1)
+rows = re.findall(
+    r"\{\s*(-?)ARMOR_WIDTH\s*/\s*2\s*,\s*(-?)LIGHTBAR_LENGTH\s*/\s*2\s*,\s*0\s*\}", block)
+assert len(rows) == 4, f"expected 4 points, got {len(rows)}"
+xs = "".join("-" if a else "+" for a, _ in rows)
+ys = "".join("-" if b else "+" for _, b in rows)
+print("x signs:", xs, " y signs:", ys)
+assert xs == "-++-", f"x order wrong: {xs} (expect -++- = 左上 右上 右下 左下)"
+assert ys == "--++", f"y order wrong: {ys} (expect --++ = top,top,bottom,bottom)"
+print("PASS: object_points 顺序与 Armor::points 对应")
+PY
+```
+
+Expected: `x signs: -++-   y signs: --++` 然后 `PASS`。若断言失败，说明点序写错了 ——
+**停下来改对**，不要靠肉眼看 `grep` 结果。
 
 Expected: 无 `MISSING`；`ARMOR_WIDTH / 2` 命中 4 行，顺序为 `-、+、+、-`（左上、右上、右下、左下）；`grep -c` 打印 `1`；`reprojection_error` 在 `pnp_check.hpp` 里是定义（`inline double`），在 `answer/main.cpp` 里是调用。
 
