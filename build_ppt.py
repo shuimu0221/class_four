@@ -200,7 +200,44 @@ def add_caption_box(slide, text, l, t, w, h, color=TEXT_MUTE, size=12, align=PP_
     run.font.color.rgb = color
 
 
+# 已生成的配图：占位标签里出现左边这个关键词，就换成右边的真图。
+# 生成脚本见 build_ppt_images.py；清单（含还需实拍/截图的）见 docs/ppt_images/README.md。
+IMAGE_KEYS = [
+    ("Armor 结构体", "s05_armor_struct.png"),
+    ("不同距离", "s06_distance_angle.png"),
+    ("飞机 yaw", "s08_yaw_pitch_roll.png"),
+    ("双坐标轴", "s09_two_frames.png"),
+    ("经典 PnP 示意图", "s12_pnp_principle.png"),
+    ("绿点标注", "s16_armor_points.png"),
+    ("左图点序正确", "s18_order_compare.png"),
+    ("三行数字", "s23_s32_runtime_overlay.png"),
+    ("三行数值", "s23_s32_runtime_overlay.png"),
+    ("流程示意图", "s25_rotation_chain.png"),
+    ("左右对比截图", "s31_reproj_compare.png"),
+]
+
+
 def add_image_placeholder(slide, l, t, w, h, label, dark_ok=False):
+    """有真图就用真图，没有就画占位框。
+
+    真图放在 lecture4/yolo/docs/ppt_images/ 下。
+    见该目录的 README.md：哪些已生成、哪些还需要实拍或截图。
+    """
+    for needle, fn in IMAGE_KEYS:
+        if needle not in label:
+            continue
+        path = os.path.join(HERE, "lecture4/yolo/docs/ppt_images", fn)
+        if not os.path.exists(path):
+            break
+        pic = slide.shapes.add_picture(path, l, t, width=w)
+        if pic.height > h:                      # 太高就按高度收缩并居中
+            ratio = h / pic.height
+            pic.height = int(pic.height * ratio)
+            pic.width = int(pic.width * ratio)
+            pic.left = int(l + (w - pic.width) / 2)
+        else:                                   # 否则按宽度居中
+            pic.top = int(t + (h - pic.height) / 2)
+        return pic
     box = add_rect(slide, l, t, w, h, RGBColor(0xE7, 0xEB, 0xF3), round_=True)
     tf = box.text_frame
     tf.word_wrap = True
