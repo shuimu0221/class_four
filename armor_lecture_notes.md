@@ -1,10 +1,32 @@
 # 视觉组第四讲：Hello Armor — Lecture Notes (from keyframes f_0001–f_0033)
 
-**Source:** `C:\Users\ziang.xu\Documents\class_four\frames\armor\f_0001.jpg` – `f_0033.jpg`
+> ## 【2027 版编者注】本文件是历史记录，不随程序更新
+>
+> 这是**往届录像的忠实史料**，正文一律不改（改了就等于伪造史料）。
+> 但它是 `build_doc.py` / `build_ppt.py` / 讲稿上下文包 `_context.md` 的**素材来源**，
+> 里面有些具体断言在本届已经**不成立**。据本文件生成任何材料之前，请先全文搜索
+> **【2027 版编者注】** 并逐条核对，**不要直接照抄代码段**。
+>
+> 本届情况：`lecture4/yolo/`（YOLO 版，**课堂上讲的**）与 `lecture4/class/`（手写传统 CV 版，
+> 只作代码保留、不再讲授）。下文凡涉及检测器、取点方式、报错文本、欧拉角单位的地方，
+> 都可能与本届不符。
+>
+> **一条正向背书**：`object_points` 的内容**两版完全相同**，无需分版本，不要出于谨慎把它改坏。
+>
+> 已知与本届冲突的点（见就地标注）：取点方式（`.left`/`.right`）、`×57.3` 换算、
+> `CAP_IMAGES` 报错文本、`class/` 目录树、转动实物装甲板；以及本届新增的
+> 「点序 + 重投影」这一对内容（本文件无对应素材）。
+
+
+**Source:** ~~`C:\Users\ziang.xu\Documents\class_four\frames\armor\f_0001.jpg` – `f_0033.jpg`~~
+**（2027 版编者注：该路径已失效。可恢复的替代素材是 `extracted_ppt/armor_slides/01–08.jpg` 与 `extracted_ppt/armor_manifest.md`——只有 8 帧，**不是** 33 帧的完整替代。）**
 **Channel/presenter:** TJ-SuperPower战队 (Tongji University RoboMaster vision team), bilibili
 **Slide file name shown on screen:** `Lectrue4 Hello Armor.pptx` (sic — typo for "Lecture4", visible in the WPS Presentation taskbar preview)
 
 > **Scope note:** The 33 extracted scene-change keyframes for this lecture cover specifically the **armor-pose-estimation (`cv::solvePnP`) and coordinate-system portion** of "Hello Armor" — not light-bar/HSV segmentation or digit classification. The code already assumes a working `Detector`/`Armor`/`Lightbar` class hierarchy (`detector.detect(img)` returning `armors` with `.points`, `.left`, `.right` members), so armor detection itself (light-bar finding/pairing) is either treated as a given/black box in this segment or was covered in a part of the lecture that did not register as a scene-change keyframe. The narrative actually captured runs: PnP pose solving → rotation representations (Euler angles, rotation matrix, quaternion) → camera/gun coordinate-frame caveats → why pose matters for aiming at moving robots → hand-eye calibration → full sensor coordinate-transform chain (pixel → camera → body → IMU).
+
+
+> **【2027 版编者注】** 上面这句提到 `Armor` 有 `.left` / `.right` 成员——**本届要小心**：这两个成员在 YOLO 这条路上**从未被赋值**，取出来是四个 `(0,0)`。本讲只用 `.points`。照抄成「从 `.left`/`.right` 取点」，学生会拿到四个重合的点、solvePnP 失败**且不报错**。
 
 ---
 
@@ -160,6 +182,8 @@ Terminal shows a runtime error when re-running after editing:
 ```
 OpenCV exception:
 OpenCV(4.5.4) ./modules/videoio/src/cap_images.cpp:253: error: (-5:Bad argument) CAP_IMAGES: can't find starting number (in the name of file): video.avi in function 'icvExtractPattern'
+
+> **【2027 版编者注】** 本届程序在错误目录下运行时，**第一个报错不是这个**，而是 `YAML::BadFile` / `what(): bad file: configs/yolo.yaml`——因为程序先构造检测器（读配置），再打开视频。`CAP_IMAGES` 这条已不再出现，讲稿里不要再念。
 ```
 Followed by commands fixing the working directory:
 ```

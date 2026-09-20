@@ -1,5 +1,18 @@
 # 2025视觉组培训第五课【装甲板位姿解算】— Keyframe Notes
 
+> ## 【2027 版编者注】本文件是历史记录，不随程序更新
+>
+> 这是**往届录像的忠实史料**，正文一律不改。但它是讲稿上下文包 `_context.md` 的素材来源，
+> 里面有些具体断言在本届已经**不成立**。据本文件生成任何材料之前，请先全文搜索
+> **【2027 版编者注】** 并逐条核对，**不要直接照抄代码段**。
+>
+> 本届情况：`lecture4/yolo/`（YOLO 版，**课堂上讲的**）。最需要警惕的是两处：
+> **① 欧拉角单位**——本文件演示的是 `×57.3` 的**角度制**，本届程序**打弧度**；
+> **② 输出位置**——本文件是**终端**滚动打印，本届程序画在**画面左上角**、原地刷新、不滚动。
+>
+> **一条正向背书**：`object_points` 的内容**两版完全相同**，无需分版本。
+
+
 Source: 42 scene-change keyframes (`f_0001.jpg`–`f_0042.jpg`) extracted from a screen recording of a TJ-SuperPower战队 (Tongji University RoboMaster vision group) training lecture slideshow + live code/VM demo, with a picture-in-picture webcam of the presenter and a second classroom display in the corner of most frames. Notes below follow the frames strictly in order (encodes the lecture's narrative/demo sequence). Near-duplicate frames (same slide, cursor/animation state changed, or VM/IDE window shuffling) are grouped and described rather than re-transcribed verbatim.
 
 ---
@@ -179,6 +192,8 @@ Single bullet: **"转动装甲板，观察rvec的方向和大小。"** (Rotate t
 Floating cropped PPT window (top-left) with the keypoint reference photo (points 1–4); a large `img` OpenCV window (dark/near-empty) behind it; a terminal on the right scrolling live **roll** values as the plate is rotated, e.g.:
 ```
 roll: 2.01
+
+> **【2027 版编者注】** 下面这段 `roll: 2.01 → 6.40` 是**原课终端**的输出，数值量级疑为角度制的 roll。**本届程序不往终端打任何东西**，tvec/rvec/欧拉角都画在**画面左上角**、原地刷新、且**打的是弧度**（零点几这种小数）。讲稿**不得**引用 2.01 / 6.40 这类数值，也不得说「终端在滚动」。
 roll: 2.30
 roll: 2.32
 roll: 2.26
@@ -229,6 +244,8 @@ fmt::print("yaw: {:.2f}, pitch: {:.2f}, roll: {:.2f}\n", yaw * 57.3, pitch * 57.
 // tools::draw_text(img, fmt::format("euler angles: yaw{: .2f} pitch{: .2f} roll{: .2f}", yaw * 57.3, pitch * 57.3, roll * 57.3), cv::Po...
 ```
 (Note: multiplying by **57.3** ≈ 180/π converts radians → degrees.) Terminal below shows the corresponding live yaw/pitch/roll printout, matching the earlier preview in f_0015.
+
+> **【2027 版编者注】** 本届程序**不带这个 `×57.3`**，画面上显示的就是弧度。57.3 只作为「想看度数就这么换算」的补充来讲，不要说学生屏幕上会出现度数值。
 
 **f_0033 — Windows desktop transition frame** (desktop icons: IntelliJ IDEA, VMware Workstation, PyCharm, Visual Studio 2022, Visual Studio Code, AutoCAD, MATLAB, etc.; two minimized cropped-PPT windows at bottom-left). No content.
 
