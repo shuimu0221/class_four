@@ -88,10 +88,13 @@ int main(int argc, char *argv[])
             tools::draw_text(img, fmt::format("reproj err:  {:.2f} px", reproj), cv::Point(10, 240), cv::Scalar(0, 255, 255), 1.7, 3);
         }
 
-        cv::imshow("press q to quit", img);
+        cv::imshow("press q to quit, space to pause", img);
 
-        if (cv::waitKey(20) == 'q')
+        int key = cv::waitKey(20);
+        if (key == 'q')
             break;
+        if (key == ' ')                 // 空格暂停，再按任意键继续
+            cv::waitKey(0);
     }
 
     cv::destroyAllWindows();

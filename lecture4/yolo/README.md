@@ -19,7 +19,7 @@ answer/main.cpp     参考实现
 
 ## 构建
 
-依赖：OpenCV、fmt、Eigen3、yaml-cpp、spdlog、OpenVINO 2024.6.0、CMake ≥ 3.16。
+依赖：OpenCV4（含 `dnn` 与 `calib3d`）、fmt、Eigen3、yaml-cpp、spdlog、OpenVINO 2024.6.0、CMake ≥ 3.16。
 
 ```bash
 cd lecture4/yolo
@@ -29,16 +29,27 @@ cmake --build build -j
 
 若 OpenVINO 装在别处，改顶层 `CMakeLists.txt` 里的 `set(OpenVINO_DIR ...)` 一处即可。
 
-## 运行
-
-**在工作目录 `lecture4/yolo/` 下运行** —— 模型、视频、配置都按相对路径找：
+**`answer` 目标默认不编译** —— `answer/main.cpp` 里就是填好的 Task 01~05，学生敲一次
+`cmake --build` 就拿到答案，整段练习会作废。教师演示时打开它：
 
 ```bash
-./build/answer      # 参考实现
-./build/main        # 学生版（Task01–05 未填，画面上全是 0.0）
+cmake -B build -DBUILD_ANSWER=ON && cmake --build build -j
 ```
 
-按 `q` 退出。
+## 运行
+
+**在工作目录 `lecture4/yolo/` 下运行** —— configs、assets、logs 都按相对路径找：
+
+```bash
+./build/main        # 学生版（Task01–05 未填，画面上全是 0.0）
+./build/answer      # 参考实现（需先 -DBUILD_ANSWER=ON 构建）
+```
+
+按 `q` 退出，按**空格**暂停（再按任意键继续，方便停在某一帧上对照讲解）。
+
+参考版比学生版多一行 `reproj err`（重投影误差自查）：点序写对时是个位数像素，
+写反会跳到几十上百。学生版没有这一行，想自查就在 `src/main.cpp` 里加
+`#include "tools/pnp_check.hpp"`（header-only，不用改 CMake）。
 
 ## 取帧方式：视频 or 相机
 

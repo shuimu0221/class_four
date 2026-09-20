@@ -35,6 +35,12 @@ add_executable(main src/main.cpp)
 target_link_libraries(main
     ${OpenCV_LIBS} fmt::fmt yaml-cpp spdlog::spdlog tools io auto_aim)
 
-add_executable(answer answer/main.cpp)
-target_link_libraries(answer
-    ${OpenCV_LIBS} fmt::fmt yaml-cpp spdlog::spdlog tools io auto_aim)
+# 参考实现默认不编译：answer/main.cpp 里就是填好的 Task 01~05，
+# 学生敲一次 cmake --build 就拿到答案，整段练习会作废。
+# 教师演示时用 -DBUILD_ANSWER=ON 打开。
+option(BUILD_ANSWER "Build the reference answer executable (teacher only)" OFF)
+if(BUILD_ANSWER)
+  add_executable(answer answer/main.cpp)
+  target_link_libraries(answer
+      ${OpenCV_LIBS} fmt::fmt yaml-cpp spdlog::spdlog tools io auto_aim)
+endif()

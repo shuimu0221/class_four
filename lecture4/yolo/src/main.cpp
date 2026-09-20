@@ -111,10 +111,13 @@ int main(int argc, char *argv[])
             // #########################################################
         }
 
-        cv::imshow("press q to quit", img);
+        cv::imshow("press q to quit, space to pause", img);
 
-        if (cv::waitKey(20) == 'q')
+        int key = cv::waitKey(20);
+        if (key == 'q')
             break;
+        if (key == ' ')                 // 空格暂停，再按任意键继续
+            cv::waitKey(0);
     }
 
     cv::destroyAllWindows();
